@@ -1,0 +1,64 @@
+class Game {
+  field Score score;
+  field PacMan pacman;
+  field Dots dots;
+  field Walls walls;
+  field Ghosts ghosts;
+  field Labels labels;
+
+  constructor Game new() {
+    let walls = Walls.new();
+    let dots = Dots.new();
+    let pacman = PacMan.new(dots, walls);
+    let score = Score.new(dots);
+    let ghosts = Ghosts.new(pacman, walls);
+    let labels = Labels.new();
+    return this;
+  }
+
+  method void init() {
+    do pacman.init();
+    do walls.init();
+    do dots.init();
+    do score.init();
+    do ghosts.init();
+    do labels.init();
+    return;
+  }
+
+  method void next() {
+    if (isGameOver()) {
+      do Output.printString("Game Over");
+      while (isGameOver()) {
+        do Sys.wait(100);
+      }
+    }
+    do pacman.next();
+    do ghosts.next();
+    do score.next();
+    return;
+  }
+
+  method boolean isGameOver() {
+    return pacman.getIsCaptured();
+  }
+
+  method void reset() {
+    do pacman.reset();
+    return;
+  }
+
+  method void handleKey(int key) {
+    if (key = 81) {
+      do reset();
+      return;
+    }
+    do pacman.handleKey(key);
+    return;
+  }
+
+  method void dispose() {
+    do Memory.deAlloc(this);
+    return;
+  }
+}

@@ -1,0 +1,83 @@
+class Dots {
+  field Array dots;
+  field int nDots;
+  field int cols;
+  field int rows;
+  field int spaceSize;
+  field int nCaptured;
+
+  constructor Dots new() {
+    let cols = 33;
+    let rows = 23;
+    let spaceSize = 9;
+    let nDots = cols * rows;
+    let dots = Array.new(nDots);
+    do createDots();
+    return this;
+  }
+
+  method void init() {
+    do draw();
+    return;
+  }
+
+  method void createDots() {
+    var int x, y;
+    var int xoffset, yoffset;
+    var int i;
+    var int row, col;
+    let i = 0;
+    let xoffset = 4;
+    let yoffset = 2;
+
+    while (i < nDots) {
+      let row = i / cols;
+      let col = i - (row * cols);
+      let x = spaceSize * (col + xoffset) + 2;
+      let y = spaceSize * (row + yoffset) + 2;
+      let dots[i] = Dot.new(x, y);
+      let i = i + 1;
+    }
+    return;
+  }
+
+  method void draw() {
+    var int i;
+    var Dot cur;
+    let i = 0;
+    while (i < nDots) {
+      let cur = dots[i];
+      do cur.draw();
+      let i = i + 1;
+    }
+    return;
+  }
+
+  method int getNCaptured() {
+    return nCaptured;
+  }
+
+  method void setCaptured(int x1, int y1, int x2, int y2) {
+    var int i;
+    var Dot cur;
+    let i = 0;
+    while (i < nDots) {
+      let cur = dots[i];
+      if (cur.isOverlap(x1, y1, x2, y2)) {
+        if (~(cur.getIsCaptured())) {
+          do cur.setCaptured();
+          do cur.draw();
+          let nCaptured = nCaptured + 1;
+        }
+        return;
+      }
+      let i = i + 1;
+    }
+    return;
+  }
+
+  method void dispose() {
+    do Memory.deAlloc(this);
+    return;
+  }
+}

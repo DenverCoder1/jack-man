@@ -1,0 +1,137 @@
+function Labels.new 0
+push constant 2
+call Memory.alloc 1
+pop pointer 0
+push constant 3
+pop this 0
+push constant 3
+call Array.new 1
+pop this 1
+push pointer 0
+call Labels.createLabels 1
+pop temp 0
+push pointer 0
+return
+function Labels.createLabels 0
+push argument 0
+pop pointer 0
+push constant 0
+push this 1
+add
+push constant 5
+call String.new 1
+push constant 83
+call String.appendChar 2
+push constant 67
+call String.appendChar 2
+push constant 79
+call String.appendChar 2
+push constant 82
+call String.appendChar 2
+push constant 69
+call String.appendChar 2
+push constant 2
+push constant 46
+call Label.new 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 1
+add
+push constant 10
+call String.new 1
+push constant 72
+call String.appendChar 2
+push constant 73
+call String.appendChar 2
+push constant 71
+call String.appendChar 2
+push constant 72
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 83
+call String.appendChar 2
+push constant 67
+call String.appendChar 2
+push constant 79
+call String.appendChar 2
+push constant 82
+call String.appendChar 2
+push constant 69
+call String.appendChar 2
+push constant 6
+push constant 46
+call Label.new 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 1
+add
+push constant 8
+call String.new 1
+push constant 74
+call String.appendChar 2
+push constant 65
+call String.appendChar 2
+push constant 67
+call String.appendChar 2
+push constant 75
+call String.appendChar 2
+push constant 45
+call String.appendChar 2
+push constant 77
+call String.appendChar 2
+push constant 65
+call String.appendChar 2
+push constant 78
+call String.appendChar 2
+push constant 20
+push constant 46
+call Label.new 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+function Labels.init 2
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+label WHILE_EXP0
+push local 0
+push this 0
+lt
+not
+if-goto WHILE_END0
+push local 0
+push this 1
+add
+pop pointer 1
+push that 0
+pop local 1
+push local 1
+call Label.init 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Labels.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return

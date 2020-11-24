@@ -1,0 +1,23 @@
+class Main {
+  function void main() {
+    var int key;
+    var Game game;
+    let game = Game.new();
+
+    do game.init();
+
+    while (true) {
+      do game.next();
+
+      let key = Keyboard.keyPressed();
+      // only enter if key pressed
+      if (~(key = 0)) {
+        do game.handleKey(key);
+      }
+      
+      do Sys.wait(20);
+    }
+
+    return;
+  }
+}

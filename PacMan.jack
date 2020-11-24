@@ -1,0 +1,177 @@
+class PacMan {
+  field int x, y, size;
+  /** ( 1="up" | 2="down" | 3="left" | 4="right" ) */
+  field int dir;
+  field Walls walls;
+  field Dots dots;
+  field int speed;
+  field boolean isCaptured;
+
+  constructor PacMan new(Dots d, Walls w) {
+    /* Pacman Config */
+    let speed = 1;
+    let x = 165; // Start x
+    let y = 155; // Start y
+    let size = 14;
+    let dir = 1; // Start direction up
+    let isCaptured = false;
+
+    let walls = w;
+    let dots = d;
+
+    return this;
+  }
+
+  /* Getters */
+  method int getX() {
+    return x;
+  }
+
+  method int getY() {
+    return y;
+  }
+
+  method int endX() {
+    return x + size - 1;
+  }
+
+  method int endY() {
+    return y + size - 1;
+  }
+
+  method boolean getIsCaptured() {
+    return isCaptured;
+  }
+
+  method void init() {
+    do draw();
+    return;
+  }
+
+  method void next() {
+    var boolean didMove;
+    let didMove = advance();
+    if (didMove) {
+      do draw();
+      do captureDots();
+    }
+    return;
+  }
+
+  method boolean advance() {
+    var int nextX, nextY;
+    let nextX = getNextX();
+    let nextY = getNextY();
+    if (willCollideWithWalls(nextX, nextY)) {
+      return false;
+    }
+    if ((x = nextX) & (y = nextY)) {
+      return false;
+    }
+    let x = nextX;
+    let y = nextY;
+    return true;
+  }
+
+  method void captureDots() {
+    do dots.setCaptured(x, y, endX(), endY());
+    return;
+  }
+
+  method void draw() {
+    do Screen.setColor(false);
+    if (dir = 4) {
+      do Screen.drawRectangle(x-1, y, x-1, endY());
+    }
+    if (dir = 3) {
+      do Screen.drawRectangle(endX()+1, y, endX()+1, endY());
+    }
+    if (dir = 2) {
+      do Screen.drawRectangle(x, y-1, endX(), y-1);
+    }
+    if (dir = 1) {
+      do Screen.drawRectangle(x, endY()+1, endX(), endY()+1);
+    }
+    // Don't redraw entire object
+    do Screen.setColor(true);
+    do Screen.drawRectangle(x, y, endX(), endY());
+    return;
+  }
+
+  method boolean willCollideWithWalls(int nextX, int nextY) {
+    var int nextEndX, nextEndY;
+    let nextEndX = nextX + size - 1;
+    let nextEndY = nextY + size - 1;
+    return walls.isOverlap(nextX, nextY, nextEndX, nextEndY);
+  }
+
+  method int getNextX() {
+    var int nextX;
+    let nextX = x;
+    if (dir = 4) {
+      let nextX = x + speed;
+    }
+    if (dir = 3) {
+      let nextX = x - speed;
+    }
+    return nextX;
+  }
+
+  method int getNextY() {
+    var int nextY;
+    let nextY = y;
+    if (dir = 2) {
+      let nextY = y + speed;
+    }
+    if (dir = 1) {
+      let nextY = y - speed;
+    }
+    return nextY;
+  }
+
+  method void reset() {
+    let x = 248;
+    let y = 120;
+    let dir = 4;
+    return;
+  }
+
+  method void handleKey(int key) {
+    if (key = 130) {
+      do setDir(3); // left
+    }
+    if (key = 131) {
+      do setDir(1); // up
+    }
+    if (key = 132) {
+      do setDir(4); // right
+    }
+    if (key = 133) {
+      do setDir(2); // down
+    }
+    return;
+  }
+
+  method void setDir(int newDir) {
+    let dir = newDir; // assume valid direction
+    return;
+  }
+
+  method void capture() {
+    let isCaptured = true;
+    return;
+  }
+
+  method boolean isOverlap(int x1, int y1, int x2, int y2) {
+    return (
+      (x1 < (endX()+1)) & (x2 > (x-1))
+    ) & (
+      (y1 < (endY()+1)) & (y2 > (y-1))
+    );
+  }
+
+  method void dispose() {
+    do Memory.deAlloc(this);
+    return;
+  }
+}

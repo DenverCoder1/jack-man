@@ -1,0 +1,31 @@
+class Boundary {
+  field int startX, startY;
+  field int endX, endY;
+
+  constructor Boundary new(int x1, int y1, int x2, int y2) {
+    let startX = x1;
+    let startY = y1;
+    let endX = x2;
+    let endY = y2;
+    return this;
+  }
+
+  method void draw() {
+    do Screen.setColor(true);
+    do Screen.drawRectangle(startX, startY, endX, endY);
+    return;
+  }
+
+  method boolean isOverlap(int x1, int y1, int x2, int y2) {
+    return (
+      (x1 < (endX+1)) & (x2 > (startX-1))
+    ) & (
+      (y1 < (endY+1)) & (y2 > (startY-1))
+    );
+  }
+
+  method void dispose() {
+    do Memory.deAlloc(this);
+    return;
+  }
+}

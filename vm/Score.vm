@@ -1,0 +1,61 @@
+function Score.new 0
+push constant 2
+call Memory.alloc 1
+pop pointer 0
+push constant 0
+pop this 0
+push argument 0
+pop this 1
+push pointer 0
+return
+function Score.init 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Score.draw 1
+pop temp 0
+push constant 0
+return
+function Score.next 1
+push argument 0
+pop pointer 0
+push this 1
+call Dots.getNCaptured 1
+push constant 10
+call Math.multiply 2
+pop local 0
+push local 0
+push this 0
+eq
+not
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push local 0
+pop this 0
+push pointer 0
+call Score.draw 1
+pop temp 0
+label IF_FALSE0
+push constant 0
+return
+function Score.draw 0
+push argument 0
+pop pointer 0
+push constant 3
+push constant 46
+call Output.moveCursor 2
+pop temp 0
+push this 0
+call Output.printInt 1
+pop temp 0
+push constant 0
+return
+function Score.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return

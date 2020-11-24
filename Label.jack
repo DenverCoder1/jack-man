@@ -1,0 +1,28 @@
+class Label {
+  field String text;
+  field int row;
+  field int col;
+
+  constructor Label new(String t, int r, int c) {
+    let text = t;
+    let row = r;
+    let col = c;
+    return this;
+  }
+
+  method void init() {
+    do draw();
+    return;
+  }
+
+  method void draw() {
+    do Output.moveCursor(row, col); // row, col
+    do Output.printString(text);
+    return;
+  }
+
+  method void dispose() {
+    do Memory.deAlloc(this);
+    return;
+  }
+}

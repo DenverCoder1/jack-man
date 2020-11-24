@@ -1,0 +1,423 @@
+function PacMan.new 0
+push constant 8
+call Memory.alloc 1
+pop pointer 0
+push constant 1
+pop this 6
+push constant 165
+pop this 0
+push constant 155
+pop this 1
+push constant 14
+pop this 2
+push constant 1
+pop this 3
+push constant 0
+pop this 7
+push argument 1
+pop this 4
+push argument 0
+pop this 5
+push pointer 0
+return
+function PacMan.getX 0
+push argument 0
+pop pointer 0
+push this 0
+return
+function PacMan.getY 0
+push argument 0
+pop pointer 0
+push this 1
+return
+function PacMan.endX 0
+push argument 0
+pop pointer 0
+push this 0
+push this 2
+add
+push constant 1
+sub
+return
+function PacMan.endY 0
+push argument 0
+pop pointer 0
+push this 1
+push this 2
+add
+push constant 1
+sub
+return
+function PacMan.getIsCaptured 0
+push argument 0
+pop pointer 0
+push this 7
+return
+function PacMan.init 0
+push argument 0
+pop pointer 0
+push pointer 0
+call PacMan.draw 1
+pop temp 0
+push constant 0
+return
+function PacMan.next 1
+push argument 0
+pop pointer 0
+push pointer 0
+call PacMan.advance 1
+pop local 0
+push local 0
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push pointer 0
+call PacMan.draw 1
+pop temp 0
+push pointer 0
+call PacMan.captureDots 1
+pop temp 0
+label IF_FALSE0
+push constant 0
+return
+function PacMan.advance 2
+push argument 0
+pop pointer 0
+push pointer 0
+call PacMan.getNextX 1
+pop local 0
+push pointer 0
+call PacMan.getNextY 1
+pop local 1
+push pointer 0
+push local 0
+push local 1
+call PacMan.willCollideWithWalls 3
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+return
+label IF_FALSE0
+push this 0
+push local 0
+eq
+push this 1
+push local 1
+eq
+and
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 0
+return
+label IF_FALSE1
+push local 0
+pop this 0
+push local 1
+pop this 1
+push constant 0
+not
+return
+function PacMan.captureDots 0
+push argument 0
+pop pointer 0
+push this 5
+push this 0
+push this 1
+push pointer 0
+call PacMan.endX 1
+push pointer 0
+call PacMan.endY 1
+call Dots.setCaptured 5
+pop temp 0
+push constant 0
+return
+function PacMan.draw 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 3
+push constant 4
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 0
+push constant 1
+sub
+push this 1
+push this 0
+push constant 1
+sub
+push pointer 0
+call PacMan.endY 1
+call Screen.drawRectangle 4
+pop temp 0
+label IF_FALSE0
+push this 3
+push constant 3
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push pointer 0
+call PacMan.endX 1
+push constant 1
+add
+push this 1
+push pointer 0
+call PacMan.endX 1
+push constant 1
+add
+push pointer 0
+call PacMan.endY 1
+call Screen.drawRectangle 4
+pop temp 0
+label IF_FALSE1
+push this 3
+push constant 2
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push this 0
+push this 1
+push constant 1
+sub
+push pointer 0
+call PacMan.endX 1
+push this 1
+push constant 1
+sub
+call Screen.drawRectangle 4
+pop temp 0
+label IF_FALSE2
+push this 3
+push constant 1
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push this 0
+push pointer 0
+call PacMan.endY 1
+push constant 1
+add
+push pointer 0
+call PacMan.endX 1
+push pointer 0
+call PacMan.endY 1
+push constant 1
+add
+call Screen.drawRectangle 4
+pop temp 0
+label IF_FALSE3
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push this 1
+push pointer 0
+call PacMan.endX 1
+push pointer 0
+call PacMan.endY 1
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function PacMan.willCollideWithWalls 2
+push argument 0
+pop pointer 0
+push argument 1
+push this 2
+add
+push constant 1
+sub
+pop local 0
+push argument 2
+push this 2
+add
+push constant 1
+sub
+pop local 1
+push this 4
+push argument 1
+push argument 2
+push local 0
+push local 1
+call Walls.isOverlap 5
+return
+function PacMan.getNextX 1
+push argument 0
+pop pointer 0
+push this 0
+pop local 0
+push this 3
+push constant 4
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 0
+push this 6
+add
+pop local 0
+label IF_FALSE0
+push this 3
+push constant 3
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push this 0
+push this 6
+sub
+pop local 0
+label IF_FALSE1
+push local 0
+return
+function PacMan.getNextY 1
+push argument 0
+pop pointer 0
+push this 1
+pop local 0
+push this 3
+push constant 2
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 1
+push this 6
+add
+pop local 0
+label IF_FALSE0
+push this 3
+push constant 1
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push this 1
+push this 6
+sub
+pop local 0
+label IF_FALSE1
+push local 0
+return
+function PacMan.reset 0
+push argument 0
+pop pointer 0
+push constant 248
+pop this 0
+push constant 120
+pop this 1
+push constant 4
+pop this 3
+push constant 0
+return
+function PacMan.handleKey 0
+push argument 0
+pop pointer 0
+push argument 1
+push constant 130
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push pointer 0
+push constant 3
+call PacMan.setDir 2
+pop temp 0
+label IF_FALSE0
+push argument 1
+push constant 131
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push pointer 0
+push constant 1
+call PacMan.setDir 2
+pop temp 0
+label IF_FALSE1
+push argument 1
+push constant 132
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push pointer 0
+push constant 4
+call PacMan.setDir 2
+pop temp 0
+label IF_FALSE2
+push argument 1
+push constant 133
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push pointer 0
+push constant 2
+call PacMan.setDir 2
+pop temp 0
+label IF_FALSE3
+push constant 0
+return
+function PacMan.setDir 0
+push argument 0
+pop pointer 0
+push argument 1
+pop this 3
+push constant 0
+return
+function PacMan.capture 0
+push argument 0
+pop pointer 0
+push constant 0
+not
+pop this 7
+push constant 0
+return
+function PacMan.isOverlap 0
+push argument 0
+pop pointer 0
+push argument 1
+push pointer 0
+call PacMan.endX 1
+push constant 1
+add
+lt
+push argument 3
+push this 0
+push constant 1
+sub
+gt
+and
+push argument 2
+push pointer 0
+call PacMan.endY 1
+push constant 1
+add
+lt
+push argument 4
+push this 1
+push constant 1
+sub
+gt
+and
+and
+return
+function PacMan.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return

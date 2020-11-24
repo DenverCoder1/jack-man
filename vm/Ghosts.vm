@@ -1,0 +1,135 @@
+function Ghosts.new 0
+push constant 4
+call Memory.alloc 1
+pop pointer 0
+push constant 4
+pop this 1
+push argument 1
+pop this 3
+push argument 0
+pop this 2
+push this 1
+call Array.new 1
+pop this 0
+push pointer 0
+call Ghosts.createGhosts 1
+pop temp 0
+push pointer 0
+return
+function Ghosts.createGhosts 0
+push argument 0
+pop pointer 0
+push constant 0
+push this 0
+add
+push constant 162
+push constant 117
+push this 2
+push this 3
+call Ghost.new 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 0
+add
+push constant 162
+push constant 117
+push this 2
+push this 3
+call Ghost.new 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 0
+add
+push constant 162
+push constant 117
+push this 2
+push this 3
+call Ghost.new 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 0
+add
+push constant 162
+push constant 117
+push this 2
+push this 3
+call Ghost.new 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+function Ghosts.init 2
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+label WHILE_EXP0
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END0
+push local 0
+push this 0
+add
+pop pointer 1
+push that 0
+pop local 1
+push local 1
+call Ghost.init 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Ghosts.next 2
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+label WHILE_EXP0
+push local 0
+push this 1
+lt
+not
+if-goto WHILE_END0
+push local 0
+push this 0
+add
+pop pointer 1
+push that 0
+pop local 1
+push local 1
+call Ghost.next 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Ghosts.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return

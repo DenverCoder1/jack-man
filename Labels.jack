@@ -1,0 +1,35 @@
+class Labels {
+  field int nLabels;
+  field Array labels;
+
+  constructor Labels new() {
+    let nLabels = 3;
+    let labels = Array.new(3);
+    do createLabels();
+    return this;
+  }
+
+  method void createLabels() {
+    let labels[0] = Label.new("SCORE", 2, 46);
+    let labels[1] = Label.new("HIGH SCORE", 6, 46);
+    let labels[2] = Label.new("JACK-MAN", 20, 46); 
+    return;
+  }
+
+  method void init() {
+    var int i;
+    var Label cur;
+    let i = 0;
+    while (i < nLabels) {
+      let cur = labels[i];
+      do cur.init();
+      let i = i + 1;
+    }
+    return;
+  }
+
+  method void dispose() {
+    do Memory.deAlloc(this);
+    return;
+  }
+}

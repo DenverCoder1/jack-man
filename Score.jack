@@ -1,0 +1,36 @@
+class Score {
+  field int score;
+  field Dots dots;
+
+  constructor Score new(Dots d) {
+    let score = 0;
+    let dots = d;
+    return this;
+  }
+
+  method void init() {
+    do draw();
+    return;
+  }
+
+  method void next() {
+    var int nextScore;
+    let nextScore = dots.getNCaptured() * 10;
+    if (~(nextScore = score)) {
+      let score = nextScore;
+      do draw();
+    }
+    return;
+  }
+
+  method void draw() {
+    do Output.moveCursor(3, 46); // row, col
+    do Output.printInt(score);
+    return;
+  }
+
+  method void dispose() {
+    do Memory.deAlloc(this);
+    return;
+  }
+}
