@@ -52,6 +52,10 @@ call Game.isGameOver 1
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
+push constant 10
+push constant 46
+call Output.moveCursor 2
+pop temp 0
 push constant 9
 call String.new 1
 push constant 71

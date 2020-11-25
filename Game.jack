@@ -28,6 +28,7 @@ class Game {
 
   method void next() {
     if (isGameOver()) {
+      do Output.moveCursor(10, 46); // row, col
       do Output.printString("Game Over");
       while (isGameOver()) {
         do Sys.wait(100);
