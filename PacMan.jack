@@ -10,10 +10,10 @@ class PacMan {
 
   constructor PacMan new(Dots d, Walls w) {
     /* Pacman Config */
-    let speed = 1;
+    let speed = 3;
     let x = 165; // Start x
     let y = 155; // Start y
-    let size = 14;
+    let size = 12;
     let dir = 1; // Start direction up
     let isCaptured = false;
     let frame = -1;
@@ -286,17 +286,18 @@ class PacMan {
   method void draw() {
     //erase pacman
     do Screen.setColor(false);
+    /** ( 1="up" | 2="down" | 3="left" | 4="right" ) */
     if (dir = 4) {
-      do Screen.drawRectangle(x-1, y, x-1, endY());
+      do Screen.drawRectangle(x - speed, y, endX() - speed, endY());
     }
     if (dir = 3) {
-      do Screen.drawRectangle(endX()+1, y, endX()+1, endY());
+      do Screen.drawRectangle(x + speed, y, endX() + speed, endY());
     }
     if (dir = 2) {
-      do Screen.drawRectangle(x, y-1, endX(), y-1);
+      do Screen.drawRectangle(x, y - speed, endX(), endY() - speed);
     }
     if (dir = 1) {
-      do Screen.drawRectangle(x, endY()+1, endX(), endY()+1);
+      do Screen.drawRectangle(x, y + speed, endX(), endY() + speed);
     }
     // new pacman
     do Screen.setColor(true);

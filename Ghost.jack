@@ -9,8 +9,8 @@ class Ghost {
 
   constructor Ghost new(int xi, int yi, PacMan p, Walls w) {
     /* Ghost Config */
-    let size = 16;
-    let speed = 1;
+    let size = 12;
+    let speed = 3;
     let x = xi; // start x
     let y = yi; // start y
     let dir = 3; // Start direction right
@@ -121,16 +121,16 @@ class Ghost {
     // remove old ghost
     do Screen.setColor(false);
     if (dir = 4) {
-      do Screen.drawRectangle(x-1, y, x-1, endY());
+      do Screen.drawRectangle(x - speed, y, endX() - speed, endY());
     }
     if (dir = 3) {
-      do Screen.drawRectangle(endX()+1, y, endX()+1, endY());
+      do Screen.drawRectangle(x + speed, y, endX() + speed, endY());
     }
     if (dir = 2) {
-      do Screen.drawRectangle(x, y-1, endX(), y-1);
+      do Screen.drawRectangle(x, y - speed, endX(), endY() - speed);
     }
     if (dir = 1) {
-      do Screen.drawRectangle(x, endY()+1, endX(), endY()+1);
+      do Screen.drawRectangle(x, y + speed, endX(), endY() + speed);
     }
     // draw new ghost
     do Screen.setColor(true);

@@ -2,13 +2,13 @@ function PacMan.new 0
 push constant 9
 call Memory.alloc 1
 pop pointer 0
-push constant 1
+push constant 3
 pop this 6
 push constant 165
 pop this 0
 push constant 155
 pop this 1
-push constant 16
+push constant 12
 pop this 2
 push constant 1
 pop this 3
@@ -1193,11 +1193,12 @@ if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
 push this 0
-push constant 1
+push this 6
 sub
 push this 1
-push this 0
-push constant 1
+push pointer 0
+call PacMan.endX 1
+push this 6
 sub
 push pointer 0
 call PacMan.endY 1
@@ -1210,14 +1211,13 @@ eq
 if-goto IF_TRUE1
 goto IF_FALSE1
 label IF_TRUE1
-push pointer 0
-call PacMan.endX 1
-push constant 1
+push this 0
+push this 6
 add
 push this 1
 push pointer 0
 call PacMan.endX 1
-push constant 1
+push this 6
 add
 push pointer 0
 call PacMan.endY 1
@@ -1232,12 +1232,13 @@ goto IF_FALSE2
 label IF_TRUE2
 push this 0
 push this 1
-push constant 1
+push this 6
 sub
 push pointer 0
 call PacMan.endX 1
-push this 1
-push constant 1
+push pointer 0
+call PacMan.endY 1
+push this 6
 sub
 call Screen.drawRectangle 4
 pop temp 0
@@ -1249,15 +1250,14 @@ if-goto IF_TRUE3
 goto IF_FALSE3
 label IF_TRUE3
 push this 0
-push pointer 0
-call PacMan.endY 1
-push constant 1
+push this 1
+push this 6
 add
 push pointer 0
 call PacMan.endX 1
 push pointer 0
 call PacMan.endY 1
-push constant 1
+push this 6
 add
 call Screen.drawRectangle 4
 pop temp 0
