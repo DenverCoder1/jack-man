@@ -14,16 +14,6 @@ class Main {
       if (~(key = 0)) {
         do game.handleKey(key);
       }
-      if (game.isGameOver() = true) {
-		
-		if (key = 142) {
-			//do game.dispose();
-			//do Screen.clearScreen();
-			//let game = Game.new();
-			//do game.init();
-			//do game.newGame();
-		}        
-      }
       do Sys.wait(20);
     }
 

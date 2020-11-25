@@ -93,29 +93,7 @@ class Ghost {
     let dir = 2;
     return;
   }
-  method void setNextDir1() {
-    var int pacmanX, pacmanY;
-    var int diffX, diffY;
-    let pacmanX = pacman.getX();
-    let pacmanY = pacman.getY();
-    let diffX = Math.max(x, pacmanX) - Math.min(x, pacmanX);
-    let diffY = Math.max(y, pacmanY) - Math.min(y, pacmanY);
-    if (~(diffX = 0) & (diffX > diffY)) {
-      if (pacmanX < x) {
-        let dir = 3;
-        return;
-      }
-      let dir = 4;
-      return;
-    }
-    if (pacmanY < y) {
-      let dir = 1;
-      return;
-    }
-    let dir = 2;
-    return;
-  }
-
+  
   method int getNextX() {
     var int nextX;
     let nextX = x;
