@@ -59,6 +59,32 @@ class Game {
     return;
   }
 
+	method void newGame() {
+    do dots.dispose();
+	do pacman.dispose();
+	
+	do score.dispose();
+	do ghosts.dispose();
+	do labels.dispose();
+	do walls.dispose();
+	do Screen.clearScreen();
+	
+	let walls = Walls.new();
+    let dots = Dots.new();
+    let pacman = PacMan.new(dots, walls);
+    let score = Score.new(dots);
+    let ghosts = Ghosts.new(pacman, walls);
+    let labels = Labels.new();
+	
+	do pacman.init();
+	do walls.init();
+    do dots.init();
+    do score.init();
+    do ghosts.init();
+    do labels.init();
+	
+    return;
+  }
   method void dispose() {
 	do walls.dispose();
 	do dots.dispose();

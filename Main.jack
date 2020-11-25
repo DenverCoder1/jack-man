@@ -13,16 +13,15 @@ class Main {
       // only enter if key pressed
       if (~(key = 0)) {
         do game.handleKey(key);
-		//
-		//~(game.isGameOver() = true)
       }
       if (game.isGameOver() = true) {
 		
 		if (key = 142) {
-			do game.dispose();
-			do Screen.clearScreen();
-			let game = Game.new();
-			do game.init();
+			//do game.dispose();
+			//do Screen.clearScreen();
+			//let game = Game.new();
+			//do game.init();
+			do game.newGame();
 		}        
       }
       do Sys.wait(20);
