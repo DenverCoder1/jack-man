@@ -40,9 +40,6 @@ eq
 if-goto IF_TRUE2
 goto IF_FALSE2
 label IF_TRUE2
-push local 1
-call Game.newGame 1
-pop temp 0
 label IF_FALSE2
 label IF_FALSE1
 push constant 20

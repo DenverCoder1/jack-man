@@ -29,11 +29,20 @@ class Game {
   }
 
   method void next() {
+	var int key;
     if (isGameOver()) {
       do Output.moveCursor(10, 46); // row, col
       do Output.printString("Game Over");
-	  do Sys.wait(100);
-	  do newGame();
+	  
+	  while (true) {
+		
+		let key = Keyboard.keyPressed();
+		if (key = 142) {
+			do newGame();
+		}
+	  }
+	  
+	  
 	  return;
       
     }
