@@ -6,6 +6,7 @@ class PacMan {
   field Dots dots;
   field int speed;
   field boolean isCaptured;
+  field int frame;
 
   constructor PacMan new(Dots d, Walls w) {
     /* Pacman Config */
@@ -15,6 +16,7 @@ class PacMan {
     let size = 14;
     let dir = 1; // Start direction up
     let isCaptured = false;
+    let frame = -1;
 
     let walls = w;
     let dots = d;
@@ -78,7 +80,211 @@ class PacMan {
     return;
   }
 
+  method void drawPacman(int frame, int dir) {
+    var double memAddress;
+    var int i;
+    var int xOffset;
+    var int yOffset;
+    // shift left 17 times
+    let memAddress = 16384 + xOffset + yOffset;
+    if (frame = -1) {
+        do Memory.poke(memAddress+32, 16770);
+        do Memory.poke(memAddress+64, 8196);
+        do Memory.poke(memAddress+96, 4104);
+        do Memory.poke(memAddress+128, 2064);
+        do Memory.poke(memAddress+160, 1056);
+        do Memory.poke(memAddress+192, 576);
+        do Memory.poke(memAddress+224, 16770);
+        do Memory.poke(memAddress+256, 16770);
+        do Memory.poke(memAddress+288, 576);
+        do Memory.poke(memAddress+320, 1056);
+        do Memory.poke(memAddress+352, 2064);
+        do Memory.poke(memAddress+384, 4104);
+        do Memory.poke(memAddress+416, 8196);
+        do Memory.poke(memAddress+448, 16770);
+    }
+    /* closed mouth */
+    if (frame = 0) {
+      do Memory.poke(memAddress+0, 992);
+      do Memory.poke(memAddress+32, 0);
+      do Memory.poke(memAddress+64, 8188);
+      do Memory.poke(memAddress+96, 16382);
+      do Memory.poke(memAddress+128, 16382);
+      do Memory.poke(memAddress+160, 32767);
+      do Memory.poke(memAddress+192, 32767);
+      do Memory.poke(memAddress+224, 32767);
+      do Memory.poke(memAddress+256, 32767);
+      do Memory.poke(memAddress+288, 32767);
+      do Memory.poke(memAddress+320, 16382);
+      do Memory.poke(memAddress+352, 16382);
+      do Memory.poke(memAddress+384, 8188);
+      do Memory.poke(memAddress+416, 4088);
+      do Memory.poke(memAddress+448, 0);
+      do Memory.poke(memAddress+480, 0);
+    }
+    /* open mouth */
+    if (frame = 1) {
+      /* up */
+      if (dir = 1) {
+        do Memory.poke(memAddress+0, 0);
+        do Memory.poke(memAddress+32, 0);
+        do Memory.poke(memAddress+64, 7196);
+        do Memory.poke(memAddress+96, 15934);
+        do Memory.poke(memAddress+128, 15934);
+        do Memory.poke(memAddress+160, 32319);
+        do Memory.poke(memAddress+192, 32639);
+        do Memory.poke(memAddress+224, 32639);
+        do Memory.poke(memAddress+256, 32767);
+        do Memory.poke(memAddress+288, 32767);
+        do Memory.poke(memAddress+320, 16382);
+        do Memory.poke(memAddress+352, 16382);
+        do Memory.poke(memAddress+384, 8188);
+        do Memory.poke(memAddress+416, 4088);
+        do Memory.poke(memAddress+448, 0);
+        do Memory.poke(memAddress+480, 0);
+      }
+      /* down */
+      if (dir = 2) {
+        do Memory.poke(memAddress+0, 0);
+        do Memory.poke(memAddress+32, 0);
+        do Memory.poke(memAddress+64, 4088);
+        do Memory.poke(memAddress+96, 8188);
+        do Memory.poke(memAddress+128, 16382);
+        do Memory.poke(memAddress+160, 16382);
+        do Memory.poke(memAddress+192, 32767);
+        do Memory.poke(memAddress+224, 32767);
+        do Memory.poke(memAddress+256, 32639);
+        do Memory.poke(memAddress+288, 32639);
+        do Memory.poke(memAddress+320, 32319);
+        do Memory.poke(memAddress+352, 15934);
+        do Memory.poke(memAddress+384, 15934);
+        do Memory.poke(memAddress+416, 7196);
+        do Memory.poke(memAddress+448, 0);
+        do Memory.poke(memAddress+480, 0);
+      }
+      /* left */
+      if (dir = 3) {
+        do Memory.poke(memAddress+0, 992);
+        do Memory.poke(memAddress+32, 0);
+        do Memory.poke(memAddress+64, 8188);
+        do Memory.poke(memAddress+96, 16382);
+        do Memory.poke(memAddress+128, 16382);
+        do Memory.poke(memAddress+160, 32760);
+        do Memory.poke(memAddress+192, 32704);
+        do Memory.poke(memAddress+224, 32512);
+        do Memory.poke(memAddress+256, 32704);
+        do Memory.poke(memAddress+288, 32760);
+        do Memory.poke(memAddress+320, 16382);
+        do Memory.poke(memAddress+352, 16382);
+        do Memory.poke(memAddress+384, 8188);
+        do Memory.poke(memAddress+416, 4088);
+        do Memory.poke(memAddress+448, 0);
+        do Memory.poke(memAddress+480, 0);
+      }
+      /* right */
+      if (dir = 4) {
+        do Memory.poke(memAddress+0, 1984);
+        do Memory.poke(memAddress+32, 0);
+        do Memory.poke(memAddress+64, 16376);
+        do Memory.poke(memAddress+96, 32764);
+        do Memory.poke(memAddress+128, 32764);
+        do Memory.poke(memAddress+160, 8190);
+        do Memory.poke(memAddress+192, 1022);
+        do Memory.poke(memAddress+224, 254);
+        do Memory.poke(memAddress+256, 1022);
+        do Memory.poke(memAddress+288, 8190);
+        do Memory.poke(memAddress+320, 32764);
+        do Memory.poke(memAddress+352, 32764);
+        do Memory.poke(memAddress+384, 16376);
+        do Memory.poke(memAddress+416, 8176);
+        do Memory.poke(memAddress+448, 0);
+        do Memory.poke(memAddress+480, 0);
+      }
+    }
+    /* open mouth 2 */
+    if (frame = 2) {
+      /** up */
+      if (dir = 1) {
+        do Memory.poke(memAddress+0, 0);
+        do Memory.poke(memAddress+32, 0);
+        do Memory.poke(memAddress+64, 0);
+        do Memory.poke(memAddress+96, 0);
+        do Memory.poke(memAddress+128, 0);
+        do Memory.poke(memAddress+160, 24579);
+        do Memory.poke(memAddress+192, 28679);
+        do Memory.poke(memAddress+224, 30735);
+        do Memory.poke(memAddress+256, 31775);
+        do Memory.poke(memAddress+288, 32319);
+        do Memory.poke(memAddress+320, 16254);
+        do Memory.poke(memAddress+352, 16382);
+        do Memory.poke(memAddress+384, 8188);
+        do Memory.poke(memAddress+416, 4088);
+        do Memory.poke(memAddress+448, 0);
+        do Memory.poke(memAddress+480, 0);
+      }
+      /** down */
+      if (dir = 2) {
+        do Memory.poke(memAddress+0, 0);
+        do Memory.poke(memAddress+32, 0);
+        do Memory.poke(memAddress+64, 4088);
+        do Memory.poke(memAddress+96, 8188);
+        do Memory.poke(memAddress+128, 16382);
+        do Memory.poke(memAddress+160, 16254);
+        do Memory.poke(memAddress+192, 32319);
+        do Memory.poke(memAddress+224, 31775);
+        do Memory.poke(memAddress+256, 30735);
+        do Memory.poke(memAddress+288, 28679);
+        do Memory.poke(memAddress+320, 24579);
+        do Memory.poke(memAddress+352, 0);
+        do Memory.poke(memAddress+384, 0);
+        do Memory.poke(memAddress+416, 0);
+        do Memory.poke(memAddress+448, 0);
+        do Memory.poke(memAddress+480, 0);
+      }
+      /** left */
+      if (dir = 3) {
+        do Memory.poke(memAddress+0, 992);
+        do Memory.poke(memAddress+32, 0);
+        do Memory.poke(memAddress+64, 8128);
+        do Memory.poke(memAddress+96, 16256);
+        do Memory.poke(memAddress+128, 16128);
+        do Memory.poke(memAddress+160, 32256);
+        do Memory.poke(memAddress+192, 31744);
+        do Memory.poke(memAddress+224, 30720);
+        do Memory.poke(memAddress+256, 31744);
+        do Memory.poke(memAddress+288, 32256);
+        do Memory.poke(memAddress+320, 16128);
+        do Memory.poke(memAddress+352, 16256);
+        do Memory.poke(memAddress+384, 8128);
+        do Memory.poke(memAddress+416, 4064);
+        do Memory.poke(memAddress+448, 0);
+        do Memory.poke(memAddress+480, 0);
+      }
+      /** right */
+      if (dir = 4) {
+        do Memory.poke(memAddress+0, 1984);
+        do Memory.poke(memAddress+32, 0);
+        do Memory.poke(memAddress+64, 1016);
+        do Memory.poke(memAddress+96, 508);
+        do Memory.poke(memAddress+128, 252);
+        do Memory.poke(memAddress+160, 126);
+        do Memory.poke(memAddress+192, 62);
+        do Memory.poke(memAddress+224, 30);
+        do Memory.poke(memAddress+256, 62);
+        do Memory.poke(memAddress+288, 126);
+        do Memory.poke(memAddress+320, 252);
+        do Memory.poke(memAddress+352, 508);
+        do Memory.poke(memAddress+384, 1016);
+        do Memory.poke(memAddress+416, 2032);
+        do Memory.poke(memAddress+448, 0);
+        do Memory.poke(memAddress+480, 0);
+      }
+    }
+    return;
+  }
+
   method void draw() {
+    //erase pacman
     do Screen.setColor(false);
     if (dir = 4) {
       do Screen.drawRectangle(x-1, y, x-1, endY());
@@ -92,9 +298,10 @@ class PacMan {
     if (dir = 1) {
       do Screen.drawRectangle(x, endY()+1, endX(), endY()+1);
     }
-    // Don't redraw entire object
+    // new pacman
     do Screen.setColor(true);
     do Screen.drawRectangle(x, y, endX(), endY());
+    // do drawPacman(frame, dir);
     return;
   }
 
@@ -171,7 +378,7 @@ class PacMan {
   }
 
   method void dispose() {
-    do Memory.deAlloc(this);
+    	do Memory.deAlloc(this);
     return;
   }
 }

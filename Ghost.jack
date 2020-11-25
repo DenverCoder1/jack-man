@@ -118,6 +118,7 @@ class Ghost {
   }
 
   method void draw() {
+    // remove old ghost
     do Screen.setColor(false);
     if (dir = 4) {
       do Screen.drawRectangle(x-1, y, x-1, endY());
@@ -131,6 +132,7 @@ class Ghost {
     if (dir = 1) {
       do Screen.drawRectangle(x, endY()+1, endX(), endY()+1);
     }
+    // draw new ghost
     do Screen.setColor(true);
     do Screen.drawRectangle(x, y, endX(), endY());
     return;

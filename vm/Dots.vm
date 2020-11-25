@@ -2,11 +2,11 @@ function Dots.new 0
 push constant 6
 call Memory.alloc 1
 pop pointer 0
-push constant 33
+push constant 17
 pop this 2
-push constant 23
+push constant 12
 pop this 3
-push constant 9
+push constant 175
 pop this 4
 push this 2
 push this 3
@@ -28,48 +28,44 @@ call Dots.draw 1
 pop temp 0
 push constant 0
 return
-function Dots.createDots 7
+function Dots.createDots 5
 push argument 0
 pop pointer 0
 push constant 0
-pop local 4
-push constant 4
 pop local 2
-push constant 2
-pop local 3
 label WHILE_EXP0
-push local 4
+push local 2
 push this 1
 lt
 not
 if-goto WHILE_END0
-push local 4
+push local 2
 push this 2
 call Math.divide 2
-pop local 5
-push local 4
-push local 5
+pop local 3
+push local 2
+push local 3
 push this 2
 call Math.multiply 2
 sub
-pop local 6
+pop local 4
 push this 4
-push local 6
-push local 2
-add
+push local 4
 call Math.multiply 2
-push constant 2
+push constant 10
+call Math.divide 2
+push constant 44
 add
 pop local 0
 push this 4
-push local 5
 push local 3
-add
 call Math.multiply 2
-push constant 2
+push constant 10
+call Math.divide 2
+push constant 26
 add
 pop local 1
-push local 4
+push local 2
 push this 0
 add
 push local 0
@@ -79,10 +75,10 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push local 4
+push local 2
 push constant 1
 add
-pop local 4
+pop local 2
 goto WHILE_EXP0
 label WHILE_END0
 push constant 0
