@@ -52,8 +52,7 @@ class Ghost {
     let nextX = getNextX();
     let nextY = getNextY();
     if (willCollideWithWalls(nextX, nextY)) {
-      //do setNextDir();
-	  do setNextDir1();
+      do setNextDir2();
       return false;
     }
     if ((x = nextX) & (y = nextY)) {
@@ -93,6 +92,26 @@ class Ghost {
     let dir = 2;
     return;
   }
+  
+  method void setNextDir2() {
+	var int i;
+	let i = Random.randRange(3);
+    if(i = 0){
+		let dir = 1;
+        return;
+	}
+	if(i = 1){
+		let dir = 2;
+        return;
+	}
+	if(i = 2){
+		let dir = 3;
+        return;
+	}
+	let dir = 4;
+    return;
+  }
+  
   
   method int getNextX() {
     var int nextX;

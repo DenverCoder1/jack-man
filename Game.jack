@@ -39,12 +39,11 @@ class Game {
 		let key = Keyboard.keyPressed();
 		if (key = 142) {
 			do newGame();
+			return;
+			
 		}
 	  }
-	  
-	  
-	  return;
-      
+	        
     }
     do pacman.next();
     do ghosts.next();

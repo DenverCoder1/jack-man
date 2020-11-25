@@ -4,7 +4,7 @@
 
 class Random {
 	static int seed;
-	
+
     function int randomSeed() {
 
         var int seed;
