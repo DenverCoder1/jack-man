@@ -52,7 +52,8 @@ class Ghost {
     let nextX = getNextX();
     let nextY = getNextY();
     if (willCollideWithWalls(nextX, nextY)) {
-      do setNextDir();
+      //do setNextDir();
+	  do setNextDir1();
       return false;
     }
     if ((x = nextX) & (y = nextY)) {
@@ -71,6 +72,28 @@ class Ghost {
   }
 
   method void setNextDir() {
+    var int pacmanX, pacmanY;
+    var int diffX, diffY;
+    let pacmanX = pacman.getX();
+    let pacmanY = pacman.getY();
+    let diffX = Math.max(x, pacmanX) - Math.min(x, pacmanX);
+    let diffY = Math.max(y, pacmanY) - Math.min(y, pacmanY);
+    if (~(diffX = 0) & (diffX > diffY)) {
+      if (pacmanX < x) {
+        let dir = 3;
+        return;
+      }
+      let dir = 4;
+      return;
+    }
+    if (pacmanY < y) {
+      let dir = 1;
+      return;
+    }
+    let dir = 2;
+    return;
+  }
+  method void setNextDir1() {
     var int pacmanX, pacmanY;
     var int diffX, diffY;
     let pacmanX = pacman.getX();

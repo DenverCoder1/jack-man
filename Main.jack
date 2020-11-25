@@ -21,7 +21,7 @@ class Main {
 			//do Screen.clearScreen();
 			//let game = Game.new();
 			//do game.init();
-			do game.newGame();
+			//do game.newGame();
 		}        
       }
       do Sys.wait(20);

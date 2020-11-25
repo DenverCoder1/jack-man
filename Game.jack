@@ -7,6 +7,8 @@ class Game {
   field Labels labels;
 
   constructor Game new() {
+	do Random.setSeed(Random.randomSeed()); 
+  
     let walls = Walls.new();
     let dots = Dots.new();
     let pacman = PacMan.new(dots, walls);
@@ -30,10 +32,10 @@ class Game {
     if (isGameOver()) {
       do Output.moveCursor(10, 46); // row, col
       do Output.printString("Game Over");
-      while (isGameOver()) {
-        //do Sys.wait(100);
-		return;
-      }
+	  do Sys.wait(100);
+	  do newGame();
+	  return;
+      
     }
     do pacman.next();
     do ghosts.next();

@@ -1,0 +1,68 @@
+// Copyright 2012 Mark Armbrust. Permission granted for educational use.
+
+/** Random.jack -- A not so random PRNG. */
+
+class Random {
+	static int seed;
+	
+    function int randomSeed() {
+
+        var int seed;
+        var int key;
+
+        let seed = 0;
+        let key = 0;
+
+        do Output.printString("press a key to start");
+        do Output.println();
+
+        while(~key) {
+            let seed = seed + 1;
+            if( seed = 32767 ) {
+                let seed = 0;
+            }
+            let key = Keyboard.keyPressed();
+        }
+
+        do Screen.clearScreen();
+
+        return seed;
+
+    }
+	
+
+    function void setSeed(int newSeed) {
+        let seed = newSeed;
+        return;
+    }
+
+    function int rand() {
+        /** return a random number in the range 0..32767 */
+        let seed = seed + 20251;
+        if (seed < 0) {
+            let seed = seed - 32767 - 1;
+        }
+        return seed;
+    }
+
+    function int randRange(int range) {
+        /** return a random number in the range 0..range */
+        var int mask;
+        var int ret;
+        let mask = 1;
+        while (mask < range) {
+            let mask = mask * 2 + 1;
+        }
+        let ret = Random.rand() & mask;
+        while (ret > range) {
+            let ret = Random.rand() & mask;
+        }
+        return ret;
+    }
+	
+	method void dispose() {
+    	do Memory.deAlloc(this);
+    return;
+  }
+}
+
