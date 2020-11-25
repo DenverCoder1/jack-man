@@ -92,7 +92,7 @@ if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
 push pointer 0
-call Ghost.setNextDir1 1
+call Ghost.setNextDir 1
 pop temp 0
 push constant 0
 return
@@ -140,73 +140,6 @@ push local 1
 call Walls.isOverlap 5
 return
 function Ghost.setNextDir 4
-push argument 0
-pop pointer 0
-push this 6
-call PacMan.getX 1
-pop local 0
-push this 6
-call PacMan.getY 1
-pop local 1
-push this 0
-push local 0
-call Math.max 2
-push this 0
-push local 0
-call Math.min 2
-sub
-pop local 2
-push this 1
-push local 1
-call Math.max 2
-push this 1
-push local 1
-call Math.min 2
-sub
-pop local 3
-push local 2
-push constant 0
-eq
-not
-push local 2
-push local 3
-gt
-and
-if-goto IF_TRUE0
-goto IF_FALSE0
-label IF_TRUE0
-push local 0
-push this 0
-lt
-if-goto IF_TRUE1
-goto IF_FALSE1
-label IF_TRUE1
-push constant 3
-pop this 3
-push constant 0
-return
-label IF_FALSE1
-push constant 4
-pop this 3
-push constant 0
-return
-label IF_FALSE0
-push local 1
-push this 1
-lt
-if-goto IF_TRUE2
-goto IF_FALSE2
-label IF_TRUE2
-push constant 1
-pop this 3
-push constant 0
-return
-label IF_FALSE2
-push constant 2
-pop this 3
-push constant 0
-return
-function Ghost.setNextDir1 4
 push argument 0
 pop pointer 0
 push this 6

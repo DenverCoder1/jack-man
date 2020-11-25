@@ -53,7 +53,7 @@ class Ghost {
     let nextY = getNextY();
     if (willCollideWithWalls(nextX, nextY)) {
       //do setNextDir();
-	  do setNextDir1();
+	  do setNextDir();
       return false;
     }
     if ((x = nextX) & (y = nextY)) {
