@@ -331,6 +331,15 @@ class Walls {
   }
 
   method void dispose() {
+	var Boundary b;
+	var int i;
+    let i = 0;
+    while (i < nBoundaries) {
+      let b = boundaries[i];
+      do b.dispose();
+      let i = i + 1;
+    }
+	do boundaries.dispose();
     do Memory.deAlloc(this);
     return;
   }

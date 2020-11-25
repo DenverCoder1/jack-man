@@ -74,6 +74,16 @@ class Dots {
   }
 
   method void dispose() {
+	var Dot b;
+	var int i;
+    let i = 0;
+    while (i < nDots) {
+      let b = dots[i];
+      do b.dispose();
+      let i = i + 1;
+    }
+	let nCaptured = 0;
+	do dots.dispose();
     do Memory.deAlloc(this);
     return;
   }

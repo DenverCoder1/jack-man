@@ -33,6 +33,9 @@ return
 function Label.dispose 0
 push argument 0
 pop pointer 0
+push this 0
+call String.dispose 1
+pop temp 0
 push pointer 0
 call Memory.deAlloc 1
 pop temp 0

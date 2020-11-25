@@ -26,6 +26,32 @@ push local 0
 call Game.handleKey 2
 pop temp 0
 label IF_FALSE0
+push local 1
+call Game.isGameOver 1
+push constant 0
+not
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push local 0
+push constant 142
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push local 1
+call Game.dispose 1
+pop temp 0
+call Screen.clearScreen 0
+pop temp 0
+call Game.new 0
+pop local 1
+push local 1
+call Game.init 1
+pop temp 0
+label IF_FALSE2
+label IF_FALSE1
 push constant 20
 call Sys.wait 1
 pop temp 0

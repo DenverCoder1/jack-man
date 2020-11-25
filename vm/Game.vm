@@ -83,9 +83,8 @@ push pointer 0
 call Game.isGameOver 1
 not
 if-goto WHILE_END0
-push constant 100
-call Sys.wait 1
-pop temp 0
+push constant 0
+return
 goto WHILE_EXP0
 label WHILE_END0
 label IF_FALSE0
@@ -138,6 +137,24 @@ return
 function Game.dispose 0
 push argument 0
 pop pointer 0
+push this 3
+call Walls.dispose 1
+pop temp 0
+push this 2
+call Dots.dispose 1
+pop temp 0
+push this 1
+call PacMan.dispose 1
+pop temp 0
+push this 0
+call Score.dispose 1
+pop temp 0
+push this 4
+call Ghosts.dispose 1
+pop temp 0
+push this 5
+call Labels.dispose 1
+pop temp 0
 push pointer 0
 call Memory.deAlloc 1
 pop temp 0

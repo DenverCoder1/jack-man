@@ -31,7 +31,8 @@ class Game {
       do Output.moveCursor(10, 46); // row, col
       do Output.printString("Game Over");
       while (isGameOver()) {
-        do Sys.wait(100);
+        //do Sys.wait(100);
+		return;
       }
     }
     do pacman.next();
@@ -59,6 +60,12 @@ class Game {
   }
 
   method void dispose() {
+	do walls.dispose();
+	do dots.dispose();
+	do pacman.dispose();
+	do score.dispose();
+	do ghosts.dispose();
+	do labels.dispose();
     do Memory.deAlloc(this);
     return;
   }
