@@ -318,6 +318,46 @@ sub
 pop local 0
 label IF_FALSE1
 push local 0
+push constant 220
+gt
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 12
+pop local 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push this 1
+push pointer 0
+call Ghost.endX 1
+push pointer 0
+call Ghost.endY 1
+call Screen.drawRectangle 4
+pop temp 0
+label IF_FALSE2
+push local 0
+push constant 12
+lt
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push constant 220
+pop local 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push this 1
+push pointer 0
+call Ghost.endX 1
+push pointer 0
+call Ghost.endY 1
+call Screen.drawRectangle 4
+pop temp 0
+label IF_FALSE3
+push local 0
 return
 function Ghost.draw 0
 push argument 0
