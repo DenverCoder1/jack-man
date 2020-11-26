@@ -1,4 +1,4 @@
-function Dots.new 0
+function Pellets.new 0
 push constant 6
 call Memory.alloc 1
 pop pointer 0
@@ -16,19 +16,19 @@ push this 1
 call Array.new 1
 pop this 0
 push pointer 0
-call Dots.createDots 1
+call Pellets.createPellets 1
 pop temp 0
 push pointer 0
 return
-function Dots.init 0
+function Pellets.init 0
 push argument 0
 pop pointer 0
 push pointer 0
-call Dots.draw 1
+call Pellets.draw 1
 pop temp 0
 push constant 0
 return
-function Dots.createDots 5
+function Pellets.createPellets 5
 push argument 0
 pop pointer 0
 push constant 0
@@ -70,7 +70,7 @@ push this 0
 add
 push local 0
 push local 1
-call Dot.new 2
+call Pellet.new 2
 pop temp 0
 pop pointer 1
 push temp 0
@@ -83,7 +83,7 @@ goto WHILE_EXP0
 label WHILE_END0
 push constant 0
 return
-function Dots.draw 2
+function Pellets.draw 2
 push argument 0
 pop pointer 0
 push constant 0
@@ -101,7 +101,7 @@ pop pointer 1
 push that 0
 pop local 1
 push local 1
-call Dot.draw 1
+call Pellet.draw 1
 pop temp 0
 push local 0
 push constant 1
@@ -111,12 +111,12 @@ goto WHILE_EXP0
 label WHILE_END0
 push constant 0
 return
-function Dots.getNCaptured 0
+function Pellets.getNCaptured 0
 push argument 0
 pop pointer 0
 push this 5
 return
-function Dots.setCollected 2
+function Pellets.setCollected 2
 push argument 0
 pop pointer 0
 push constant 0
@@ -138,12 +138,12 @@ push argument 1
 push argument 2
 push argument 3
 push argument 4
-call Dot.checkOverlapping 5
+call Pellet.checkOverlapping 5
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
 push local 1
-call Dot.isCollected 1
+call Pellet.isCollected 1
 not
 if-goto IF_TRUE1
 goto IF_FALSE1
@@ -153,7 +153,7 @@ if-goto IF_TRUE2
 goto IF_FALSE2
 label IF_TRUE2
 push local 1
-call Dot.setCollected 1
+call Pellet.setCollected 1
 pop temp 0
 push this 5
 push constant 1
@@ -161,7 +161,7 @@ add
 pop this 5
 label IF_FALSE2
 push local 1
-call Dot.draw 1
+call Pellet.draw 1
 pop temp 0
 label IF_FALSE1
 push constant 0
@@ -175,7 +175,7 @@ goto WHILE_EXP0
 label WHILE_END0
 push constant 0
 return
-function Dots.dispose 2
+function Pellets.dispose 2
 push argument 0
 pop pointer 0
 push constant 0
@@ -193,7 +193,7 @@ pop pointer 1
 push that 0
 pop local 0
 push local 0
-call Dot.dispose 1
+call Pellet.dispose 1
 pop temp 0
 push local 1
 push constant 1

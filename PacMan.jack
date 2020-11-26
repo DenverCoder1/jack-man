@@ -3,12 +3,12 @@ class PacMan {
   /** ( 1="up" | 2="down" | 3="left" | 4="right" ) */
   field int dir;
   field Walls walls;
-  field Dots dots;
+  field Pellets pellets;
   field int speed;
   field boolean isCaptured;
   field int frame;
 
-  constructor PacMan new(Dots d, Walls w) {
+  constructor PacMan new(Pellets p, Walls w) {
     /* Pacman Config */
     let speed = 3;
     let x = 165; // Start x
@@ -19,7 +19,7 @@ class PacMan {
     let frame = -1;
 
     let walls = w;
-    let dots = d;
+    let pellets = p;
 
     return this;
   }
@@ -55,7 +55,7 @@ class PacMan {
     let didMove = advance();
     if (didMove) {
       do draw();
-      do captureDots();
+      do capturePellets();
     }
     return;
   }
@@ -75,8 +75,8 @@ class PacMan {
     return true;
   }
 
-  method void captureDots() {
-    do dots.setCollected(x, y, endX(), endY(), true);
+  method void capturePellets() {
+    do pellets.setCollected(x, y, endX(), endY(), true);
     return;
   }
 

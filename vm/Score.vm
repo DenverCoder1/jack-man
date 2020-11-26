@@ -20,7 +20,7 @@ function Score.next 1
 push argument 0
 pop pointer 0
 push this 2
-call Dots.getNCaptured 1
+call Pellets.getNCaptured 1
 push constant 10
 call Math.multiply 2
 pop local 0

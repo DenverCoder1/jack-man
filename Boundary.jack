@@ -1,6 +1,6 @@
 class Boundary {
-  field int leftX, topY;
-  field int rightX, bottomY;
+  // corners of boundary
+  field int leftX, topY, rightX, bottomY;
 
   // construct boundary
   constructor Boundary new(int x1, int y1, int x2, int y2) {

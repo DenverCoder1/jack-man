@@ -5,9 +5,9 @@ class Ghost {
   field int speed;
   field Walls walls;
   field PacMan pacman;
-  field Dots dots;
+  field Pellets pellets;
 
-  constructor Ghost new(int xi, int yi, PacMan p, Walls w, Dots d) {
+  constructor Ghost new(int xi, int yi, PacMan p, Walls w, Pellets p) {
     /* Ghost Config */
     let size = 12;
     let speed = 3;
@@ -17,7 +17,7 @@ class Ghost {
 
     let pacman = p;
     let walls = w;
-    let dots = d;
+    let pellets = p;
 
     return this;
   }
@@ -190,8 +190,8 @@ class Ghost {
     }
     // erase old ghost
     do Screen.drawRectangle(oldLeftX, oldTopY, oldRightX, oldBottomY);
-    // fix dots - redraw dot if was overlapping one
-    do dots.setCollected(oldLeftX, oldTopY, oldRightX, oldBottomY, false);
+    // fix pellets - redraw pellet if was overlapping one
+    do pellets.setCollected(oldLeftX, oldTopY, oldRightX, oldBottomY, false);
     // draw new ghost
     do Screen.setColor(true);
     do Screen.drawRectangle(x, y, endX(), endY());

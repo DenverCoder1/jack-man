@@ -1,18 +1,18 @@
-class Dots {
-  field Array dots;
-  field int nDots;
+class Pellets {
+  field Array pellets;
+  field int nPellets;
   field int cols;
   field int rows;
   field int spaceSize;
   field int nCaptured;
 
-  constructor Dots new() {
+  constructor Pellets new() {
     let cols = 17;
     let rows = 12;
     let spaceSize = 175;
-    let nDots = cols * rows;
-    let dots = Array.new(nDots);
-    do createDots();
+    let nPellets = cols * rows;
+    let pellets = Array.new(nPellets);
+    do createPellets();
     return this;
   }
 
@@ -21,18 +21,18 @@ class Dots {
     return;
   }
 
-  method void createDots() {
+  method void createPellets() {
     var int x, y;
     var int i;
     var int row, col;
     let i = 0;
 
-    while (i < nDots) {
+    while (i < nPellets) {
       let row = i / cols;
       let col = i - (row * cols);
       let x = (spaceSize * col) / 10 + 44;
       let y = (spaceSize * row) / 10 + 26;
-      let dots[i] = Dot.new(x, y);
+      let pellets[i] = Pellet.new(x, y);
       let i = i + 1;
     }
     return;
@@ -40,10 +40,10 @@ class Dots {
 
   method void draw() {
     var int i;
-    var Dot cur;
+    var Pellet cur;
     let i = 0;
-    while (i < nDots) {
-      let cur = dots[i];
+    while (i < nPellets) {
+      let cur = pellets[i];
       do cur.draw();
       let i = i + 1;
     }
@@ -56,10 +56,10 @@ class Dots {
 
   method void setCollected(int x1, int y1, int x2, int y2, boolean collecting) {
     var int i;
-    var Dot cur;
+    var Pellet cur;
     let i = 0;
-    while (i < nDots) {
-      let cur = dots[i];
+    while (i < nPellets) {
+      let cur = pellets[i];
       if (cur.checkOverlapping(x1, y1, x2, y2)) {
         if (~(cur.isCollected())) {
           if (collecting) {
@@ -76,16 +76,16 @@ class Dots {
   }
 
   method void dispose() {
-    var Dot b;
+    var Pellet b;
     var int i;
     let i = 0;
-    while (i < nDots) {
-      let b = dots[i];
+    while (i < nPellets) {
+      let b = pellets[i];
       do b.dispose();
       let i = i + 1;
     }
     let nCaptured = 0;
-    do dots.dispose();
+    do pellets.dispose();
     do Memory.deAlloc(this);
     return;
   }

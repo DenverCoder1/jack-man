@@ -6,7 +6,7 @@ push constant 4
 pop this 1
 push argument 1
 pop this 3
-push argument 0
+push argument 2
 pop this 2
 push argument 2
 pop this 4

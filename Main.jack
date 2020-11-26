@@ -14,7 +14,7 @@ class Main {
       if (~(key = 0)) {
         do game.handleKey(key);
       }
-      do Sys.wait(20);
+      // do Sys.wait(20);
     }
 
     return;

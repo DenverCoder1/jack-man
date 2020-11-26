@@ -1,7 +1,7 @@
 class Game {
   field Score score;
   field PacMan pacman;
-  field Dots dots;
+  field Pellets pellets;
   field Walls walls;
   field Ghosts ghosts;
   field Labels labels;
@@ -10,10 +10,10 @@ class Game {
 	  do Random.setSeed(Random.randomSeed()); 
   
     let walls = Walls.new();
-    let dots = Dots.new();
-    let pacman = PacMan.new(dots, walls);
-    let score = Score.new(dots);
-    let ghosts = Ghosts.new(pacman, walls, dots);
+    let pellets = Pellets.new();
+    let pacman = PacMan.new(pellets, walls);
+    let score = Score.new(pellets);
+    let ghosts = Ghosts.new(pacman, walls, pellets);
     let labels = Labels.new();
     return this;
   }
@@ -21,7 +21,7 @@ class Game {
   method void init() {
     do pacman.init();
     do walls.init();
-    do dots.init();
+    do pellets.init();
     do score.init();
     do ghosts.init();
     do labels.init();
@@ -74,7 +74,7 @@ class Game {
   }
 
 	method void newGame() {
-    do dots.dispose();
+    do pellets.dispose();
     do pacman.dispose();
     do score.dispose();
     do ghosts.dispose();
@@ -83,15 +83,15 @@ class Game {
     do Screen.clearScreen();
     
     let walls = Walls.new();
-    let dots = Dots.new();
-    let pacman = PacMan.new(dots, walls);
-    let score = Score.new(dots);
-    let ghosts = Ghosts.new(pacman, walls, dots);
+    let pellets = Pellets.new();
+    let pacman = PacMan.new(pellets, walls);
+    let score = Score.new(pellets);
+    let ghosts = Ghosts.new(pacman, walls, pellets);
     let labels = Labels.new();
 	
     do pacman.init();
     do walls.init();
-    do dots.init();
+    do pellets.init();
     do score.init();
     do ghosts.init();
     do labels.init();
@@ -101,7 +101,7 @@ class Game {
 
   method void dispose() {
 	do walls.dispose();
-	do dots.dispose();
+	do pellets.dispose();
 	do pacman.dispose();
 	do score.dispose();
 	do ghosts.dispose();

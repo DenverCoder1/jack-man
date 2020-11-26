@@ -7,7 +7,7 @@ call Random.setSeed 1
 pop temp 0
 call Walls.new 0
 pop this 3
-call Dots.new 0
+call Pellets.new 0
 pop this 2
 push this 2
 push this 3
@@ -35,7 +35,7 @@ push this 3
 call Walls.init 1
 pop temp 0
 push this 2
-call Dots.init 1
+call Pellets.init 1
 pop temp 0
 push this 0
 call Score.init 1
@@ -212,7 +212,7 @@ function Game.newGame 0
 push argument 0
 pop pointer 0
 push this 2
-call Dots.dispose 1
+call Pellets.dispose 1
 pop temp 0
 push this 1
 call PacMan.dispose 1
@@ -233,7 +233,7 @@ call Screen.clearScreen 0
 pop temp 0
 call Walls.new 0
 pop this 3
-call Dots.new 0
+call Pellets.new 0
 pop this 2
 push this 2
 push this 3
@@ -256,7 +256,7 @@ push this 3
 call Walls.init 1
 pop temp 0
 push this 2
-call Dots.init 1
+call Pellets.init 1
 pop temp 0
 push this 0
 call Score.init 1
@@ -276,7 +276,7 @@ push this 3
 call Walls.dispose 1
 pop temp 0
 push this 2
-call Dots.dispose 1
+call Pellets.dispose 1
 pop temp 0
 push this 1
 call PacMan.dispose 1

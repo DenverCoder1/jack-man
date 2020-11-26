@@ -1,11 +1,11 @@
 class Score {
   field int score;
   field int high;
-  field Dots dots;
+  field Pellets pellets;
 
-  constructor Score new(Dots d) {
+  constructor Score new(Pellets p) {
     let score = 0;
-    let dots = d;
+    let pellets = p;
     return this;
   }
 
@@ -16,7 +16,7 @@ class Score {
 
   method void next() {
     var int nextScore;
-    let nextScore = dots.getNCaptured() * 10;
+    let nextScore = pellets.getNCaptured() * 10;
     if (~(nextScore = score)) {
       let score = nextScore;
 	  if(score > high){

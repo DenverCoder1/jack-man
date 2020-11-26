@@ -12,7 +12,7 @@ push argument 1
 pop this 1
 push constant 3
 pop this 3
-push argument 2
+push argument 4
 pop this 6
 push argument 3
 pop this 5
@@ -463,7 +463,7 @@ push local 2
 push local 1
 push local 3
 push constant 0
-call Dots.setCollected 6
+call Pellets.setCollected 6
 pop temp 0
 push constant 0
 not

@@ -1,4 +1,4 @@
-function Dot.new 0
+function Pellet.new 0
 push constant 4
 call Memory.alloc 1
 pop pointer 0
@@ -12,7 +12,7 @@ push constant 0
 pop this 2
 push pointer 0
 return
-function Dot.draw 0
+function Pellet.draw 0
 push argument 0
 pop pointer 0
 push this 2
@@ -35,7 +35,7 @@ call Screen.drawRectangle 4
 pop temp 0
 push constant 0
 return
-function Dot.setCollected 0
+function Pellet.setCollected 0
 push argument 0
 pop pointer 0
 push constant 0
@@ -43,22 +43,22 @@ not
 pop this 2
 push constant 0
 return
-function Dot.isCollected 0
+function Pellet.isCollected 0
 push argument 0
 pop pointer 0
 push this 2
 return
-function Dot.getX 0
+function Pellet.getX 0
 push argument 0
 pop pointer 0
 push this 0
 return
-function Dot.getY 0
+function Pellet.getY 0
 push argument 0
 pop pointer 0
 push this 1
 return
-function Dot.checkOverlapping 0
+function Pellet.checkOverlapping 0
 push argument 0
 pop pointer 0
 push argument 1
@@ -85,7 +85,7 @@ gt
 and
 and
 return
-function Dot.dispose 0
+function Pellet.dispose 0
 push argument 0
 pop pointer 0
 push pointer 0
