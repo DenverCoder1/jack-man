@@ -32,7 +32,11 @@ class Game {
 	var int key;
     if (isGameOver()) {
       do Output.moveCursor(10, 46); // row, col
-      do Output.printString("Game Over");
+      do Output.printString("GAME OVER");
+      do Output.moveCursor(13, 46); // row, col
+      do Output.printString("INSERT COIN");
+      do Output.moveCursor(14, 46); // row, col
+      do Output.printString("- PRESS F2");
 	  
 	  while (true) {
 		
