@@ -7,7 +7,7 @@ class Game {
   field Labels labels;
 
   constructor Game new() {
-	do Random.setSeed(Random.randomSeed()); 
+	  do Random.setSeed(Random.randomSeed()); 
   
     let walls = Walls.new();
     let dots = Dots.new();

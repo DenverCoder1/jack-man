@@ -3,7 +3,7 @@
 /** Random.jack -- A not so random PRNG. */
 
 class Random {
-	static int seed;
+    static int seed;
 
     function int randomSeed() {
 
@@ -13,8 +13,8 @@ class Random {
         let seed = 0;
         let key = 0;
 
-        do Output.printString("press a key to start");
-        do Output.println();
+        // display splash screen
+        do Splash.show();
 
         while(~key) {
             let seed = seed + 1;
@@ -27,7 +27,6 @@ class Random {
         do Screen.clearScreen();
 
         return seed;
-
     }
 	
 
@@ -59,10 +58,10 @@ class Random {
         }
         return ret;
     }
-	
-	method void dispose() {
+
+    method void dispose() {
     	do Memory.deAlloc(this);
-    return;
-  }
+        return;
+    }
 }
 
