@@ -316,13 +316,13 @@ class Walls {
     return;
   }
 
-  method boolean isOverlap(int x1, int y1, int x2, int y2) {
+  method boolean checkOverlapping(int x1, int y1, int x2, int y2) {
     var Boundary b;
     var int i;
     let i = 0;
     while (i < nBoundaries) {
       let b = boundaries[i];
-      if (b.isOverlap(x1, y1, x2, y2)) {
+      if (b.checkOverlapping(x1, y1, x2, y2)) {
         return true;
       }
       let i = i + 1;

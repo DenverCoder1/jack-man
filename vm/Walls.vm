@@ -3449,7 +3449,7 @@ goto WHILE_EXP0
 label WHILE_END0
 push constant 0
 return
-function Walls.isOverlap 2
+function Walls.checkOverlapping 2
 push argument 0
 pop pointer 0
 push constant 0
@@ -3471,7 +3471,7 @@ push argument 1
 push argument 2
 push argument 3
 push argument 4
-call Boundary.isOverlap 5
+call Boundary.checkOverlapping 5
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0

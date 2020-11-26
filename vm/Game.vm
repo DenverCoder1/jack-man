@@ -18,7 +18,8 @@ call Score.new 1
 pop this 0
 push this 1
 push this 3
-call Ghosts.new 2
+push this 2
+call Ghosts.new 3
 pop this 4
 call Labels.new 0
 pop this 5
@@ -243,7 +244,8 @@ call Score.new 1
 pop this 0
 push this 1
 push this 3
-call Ghosts.new 2
+push this 2
+call Ghosts.new 3
 pop this 4
 call Labels.new 0
 pop this 5

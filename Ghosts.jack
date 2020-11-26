@@ -3,21 +3,23 @@ class Ghosts {
   field int nGhosts;
   field PacMan pacman;
   field Walls walls;
+  field Dots dots;
 
-  constructor Ghosts new(PacMan p, Walls w) {
+  constructor Ghosts new(PacMan p, Walls w, Dots d) {
     let nGhosts = 4;
     let walls = w;
     let pacman = p;
+    let dots = d;
     let ghosts = Array.new(nGhosts);
     do createGhosts();
     return this;
   }
 
   method void createGhosts() {
-    let ghosts[0] = Ghost.new(162, 117, pacman, walls);
-    let ghosts[1] = Ghost.new(162, 117, pacman, walls);
-    let ghosts[2] = Ghost.new(162, 117, pacman, walls);
-    let ghosts[3] = Ghost.new(162, 117, pacman, walls);
+    let ghosts[0] = Ghost.new(162, 117, pacman, walls, dots);
+    let ghosts[1] = Ghost.new(162, 117, pacman, walls, dots);
+    let ghosts[2] = Ghost.new(162, 117, pacman, walls, dots);
+    let ghosts[3] = Ghost.new(162, 117, pacman, walls, dots);
     return;
   }
 

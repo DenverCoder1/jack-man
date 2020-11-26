@@ -76,7 +76,7 @@ class PacMan {
   }
 
   method void captureDots() {
-    do dots.setCaptured(x, y, endX(), endY());
+    do dots.setCollected(x, y, endX(), endY(), true);
     return;
   }
 
@@ -310,7 +310,7 @@ class PacMan {
     var int nextEndX, nextEndY;
     let nextEndX = nextX + size - 1;
     let nextEndY = nextY + size - 1;
-    return walls.isOverlap(nextX, nextY, nextEndX, nextEndY);
+    return walls.checkOverlapping(nextX, nextY, nextEndX, nextEndY);
   }
 
   method int getNextX() {
@@ -339,7 +339,7 @@ class PacMan {
       do Screen.setColor(false);
       do Screen.drawRectangle(x, y, endX(), endY());
     }
-    if (nextY < 12) {
+    if (nextY < 10) {
       let nextY = 220;
       do Screen.setColor(false);
       do Screen.drawRectangle(x, y, endX(), endY());
@@ -380,7 +380,7 @@ class PacMan {
     return;
   }
 
-  method boolean isOverlap(int x1, int y1, int x2, int y2) {
+  method boolean checkOverlapping(int x1, int y1, int x2, int y2) {
     return (
       (x1 < (endX()+1)) & (x2 > (x-1))
     ) & (

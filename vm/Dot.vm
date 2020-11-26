@@ -35,7 +35,7 @@ call Screen.drawRectangle 4
 pop temp 0
 push constant 0
 return
-function Dot.setCaptured 0
+function Dot.setCollected 0
 push argument 0
 pop pointer 0
 push constant 0
@@ -43,7 +43,7 @@ not
 pop this 2
 push constant 0
 return
-function Dot.getIsCaptured 0
+function Dot.isCollected 0
 push argument 0
 pop pointer 0
 push this 2
@@ -58,7 +58,7 @@ push argument 0
 pop pointer 0
 push this 1
 return
-function Dot.isOverlap 0
+function Dot.checkOverlapping 0
 push argument 0
 pop pointer 0
 push argument 1

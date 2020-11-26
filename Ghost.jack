@@ -1,13 +1,13 @@
 class Ghost {
   field int x, y;
   field int size;
-  /** ( 1="up" | 2="down" | 3="left" | 4="right" ) */
-  field int dir;
+  field int dir; /* 1=up, 2=down, 3=left, 4=right */
   field int speed;
   field Walls walls;
   field PacMan pacman;
+  field Dots dots;
 
-  constructor Ghost new(int xi, int yi, PacMan p, Walls w) {
+  constructor Ghost new(int xi, int yi, PacMan p, Walls w, Dots d) {
     /* Ghost Config */
     let size = 12;
     let speed = 3;
@@ -17,6 +17,7 @@ class Ghost {
 
     let pacman = p;
     let walls = w;
+    let dots = d;
 
     return this;
   }
@@ -41,7 +42,7 @@ class Ghost {
     if (didMove) {
       do draw();
     }
-    if (pacman.isOverlap(x, y, endX(), endY())) {
+    if (pacman.checkOverlapping(x, y, endX(), endY())) {
       do pacman.capture();
     }
     return;
@@ -68,7 +69,7 @@ class Ghost {
     var int nextEndX, nextEndY;
     let nextEndX = nextX + size - 1;
     let nextEndY = nextY + size - 1;
-    return walls.isOverlap(nextX, nextY, nextEndX, nextEndY);
+    return walls.checkOverlapping(nextX, nextY, nextEndX, nextEndY);
   }
 
   method void setNextDir() {
@@ -153,20 +154,44 @@ class Ghost {
   }
 
   method void draw() {
+    var int oldLeftX;
+    var int oldRightX;
+    var int oldTopY;
+    var int oldBottomY;
     // remove old ghost
     do Screen.setColor(false);
+    // right
     if (dir = 4) {
-      do Screen.drawRectangle(x - speed, y, endX() - speed, endY());
+      let oldLeftX = x - speed;
+      let oldRightX = endX() - speed;
+      let oldTopY = y;
+      let oldBottomY = endY();
     }
+    // left
     if (dir = 3) {
-      do Screen.drawRectangle(x + speed, y, endX() + speed, endY());
+      let oldLeftX = x + speed;
+      let oldRightX = endX() + speed;
+      let oldTopY = y;
+      let oldBottomY = endY();
     }
+    // down
     if (dir = 2) {
-      do Screen.drawRectangle(x, y - speed, endX(), endY() - speed);
+      let oldLeftX = x;
+      let oldRightX = endX();
+      let oldTopY = y - speed;
+      let oldBottomY = endY() - speed;
     }
+    // up
     if (dir = 1) {
-      do Screen.drawRectangle(x, y + speed, endX(), endY() + speed);
+      let oldLeftX = x;
+      let oldRightX = endX();
+      let oldTopY = y + speed;
+      let oldBottomY = endY() + speed;
     }
+    // erase old ghost
+    do Screen.drawRectangle(oldLeftX, oldTopY, oldRightX, oldBottomY);
+    // fix dots - redraw dot if was overlapping one
+    do dots.setCollected(oldLeftX, oldTopY, oldRightX, oldBottomY, false);
     // draw new ghost
     do Screen.setColor(true);
     do Screen.drawRectangle(x, y, endX(), endY());

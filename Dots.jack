@@ -54,17 +54,19 @@ class Dots {
     return nCaptured;
   }
 
-  method void setCaptured(int x1, int y1, int x2, int y2) {
+  method void setCollected(int x1, int y1, int x2, int y2, boolean collecting) {
     var int i;
     var Dot cur;
     let i = 0;
     while (i < nDots) {
       let cur = dots[i];
-      if (cur.isOverlap(x1, y1, x2, y2)) {
-        if (~(cur.getIsCaptured())) {
-          do cur.setCaptured();
+      if (cur.checkOverlapping(x1, y1, x2, y2)) {
+        if (~(cur.isCollected())) {
+          if (collecting) {
+            do cur.setCollected();
+            let nCaptured = nCaptured + 1;
+          }
           do cur.draw();
-          let nCaptured = nCaptured + 1;
         }
         return;
       }
@@ -74,16 +76,16 @@ class Dots {
   }
 
   method void dispose() {
-	var Dot b;
-	var int i;
+    var Dot b;
+    var int i;
     let i = 0;
     while (i < nDots) {
       let b = dots[i];
       do b.dispose();
       let i = i + 1;
     }
-	let nCaptured = 0;
-	do dots.dispose();
+    let nCaptured = 0;
+    do dots.dispose();
     do Memory.deAlloc(this);
     return;
   }

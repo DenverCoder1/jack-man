@@ -132,7 +132,9 @@ push pointer 0
 call PacMan.endX 1
 push pointer 0
 call PacMan.endY 1
-call Dots.setCaptured 5
+push constant 0
+not
+call Dots.setCollected 6
 pop temp 0
 push constant 0
 return
@@ -1296,7 +1298,7 @@ push argument 1
 push argument 2
 push local 0
 push local 1
-call Walls.isOverlap 5
+call Walls.checkOverlapping 5
 return
 function PacMan.getNextX 1
 push argument 0
@@ -1375,7 +1377,7 @@ call Screen.drawRectangle 4
 pop temp 0
 label IF_FALSE2
 push local 0
-push constant 12
+push constant 10
 lt
 if-goto IF_TRUE3
 goto IF_FALSE3
@@ -1471,7 +1473,7 @@ not
 pop this 7
 push constant 0
 return
-function PacMan.isOverlap 0
+function PacMan.checkOverlapping 0
 push argument 0
 pop pointer 0
 push argument 1

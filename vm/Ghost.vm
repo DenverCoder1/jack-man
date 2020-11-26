@@ -1,5 +1,5 @@
 function Ghost.new 0
-push constant 7
+push constant 8
 call Memory.alloc 1
 pop pointer 0
 push constant 12
@@ -16,6 +16,8 @@ push argument 2
 pop this 6
 push argument 3
 pop this 5
+push argument 4
+pop this 7
 push pointer 0
 return
 function Ghost.endX 0
@@ -65,7 +67,7 @@ push pointer 0
 call Ghost.endX 1
 push pointer 0
 call Ghost.endY 1
-call PacMan.isOverlap 5
+call PacMan.checkOverlapping 5
 if-goto IF_TRUE1
 goto IF_FALSE1
 label IF_TRUE1
@@ -137,7 +139,7 @@ push argument 1
 push argument 2
 push local 0
 push local 1
-call Walls.isOverlap 5
+call Walls.checkOverlapping 5
 return
 function Ghost.setNextDir 4
 push argument 0
@@ -359,7 +361,7 @@ pop temp 0
 label IF_FALSE3
 push local 0
 return
-function Ghost.draw 0
+function Ghost.draw 4
 push argument 0
 pop pointer 0
 push constant 0
@@ -374,15 +376,17 @@ label IF_TRUE0
 push this 0
 push this 4
 sub
-push this 1
+pop local 0
 push pointer 0
 call Ghost.endX 1
 push this 4
 sub
+pop local 1
+push this 1
+pop local 2
 push pointer 0
 call Ghost.endY 1
-call Screen.drawRectangle 4
-pop temp 0
+pop local 3
 label IF_FALSE0
 push this 3
 push constant 3
@@ -393,15 +397,17 @@ label IF_TRUE1
 push this 0
 push this 4
 add
-push this 1
+pop local 0
 push pointer 0
 call Ghost.endX 1
 push this 4
 add
+pop local 1
+push this 1
+pop local 2
 push pointer 0
 call Ghost.endY 1
-call Screen.drawRectangle 4
-pop temp 0
+pop local 3
 label IF_FALSE1
 push this 3
 push constant 2
@@ -410,17 +416,19 @@ if-goto IF_TRUE2
 goto IF_FALSE2
 label IF_TRUE2
 push this 0
+pop local 0
+push pointer 0
+call Ghost.endX 1
+pop local 1
 push this 1
 push this 4
 sub
-push pointer 0
-call Ghost.endX 1
+pop local 2
 push pointer 0
 call Ghost.endY 1
 push this 4
 sub
-call Screen.drawRectangle 4
-pop temp 0
+pop local 3
 label IF_FALSE2
 push this 3
 push constant 1
@@ -429,18 +437,34 @@ if-goto IF_TRUE3
 goto IF_FALSE3
 label IF_TRUE3
 push this 0
+pop local 0
+push pointer 0
+call Ghost.endX 1
+pop local 1
 push this 1
 push this 4
 add
-push pointer 0
-call Ghost.endX 1
+pop local 2
 push pointer 0
 call Ghost.endY 1
 push this 4
 add
+pop local 3
+label IF_FALSE3
+push local 0
+push local 2
+push local 1
+push local 3
 call Screen.drawRectangle 4
 pop temp 0
-label IF_FALSE3
+push this 7
+push local 0
+push local 2
+push local 1
+push local 3
+push constant 0
+call Dots.setCollected 6
+pop temp 0
 push constant 0
 not
 call Screen.setColor 1

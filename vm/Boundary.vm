@@ -27,7 +27,7 @@ call Screen.drawRectangle 4
 pop temp 0
 push constant 0
 return
-function Boundary.isOverlap 0
+function Boundary.checkOverlapping 0
 push argument 0
 pop pointer 0
 push argument 1

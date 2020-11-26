@@ -1,29 +1,29 @@
 class Dot {
   field int x, y;
-  field boolean isCaptured;
+  field boolean collected;
   field int dotSize;
 
   constructor Dot new(int ix, int iy) {
     let x = ix;
     let y = iy;
     let dotSize = 2;
-    let isCaptured = false;
+    let collected = false;
     return this;
   }
 
   method void draw() {
-    do Screen.setColor(~isCaptured);
+    do Screen.setColor(~collected);
     do Screen.drawRectangle(x, y, x+dotSize-1, y+dotSize-1);
     return;
   }
 
-  method void setCaptured() {
-    let isCaptured = true;
+  method void setCollected() {
+    let collected = true;
     return;
   }
 
-  method boolean getIsCaptured() {
-    return isCaptured;
+  method boolean isCollected() {
+    return collected;
   }
 
   method int getX() {
@@ -34,7 +34,7 @@ class Dot {
     return y;
   }
 
-  method boolean isOverlap(int x1, int y1, int x2, int y2) {
+  method boolean checkOverlapping(int x1, int y1, int x2, int y2) {
     return (
       (x1 < (x + dotSize)) & (x2 > (x - 1))
     ) & (

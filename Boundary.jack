@@ -1,29 +1,37 @@
 class Boundary {
-  field int startX, startY;
-  field int endX, endY;
+  field int leftX, topY;
+  field int rightX, bottomY;
 
+  // construct boundary
   constructor Boundary new(int x1, int y1, int x2, int y2) {
-    let startX = x1;
-    let startY = y1;
-    let endX = x2;
-    let endY = y2;
+    let leftX = x1;
+    let topY = y1;
+    let rightX = x2;
+    let bottomY = y2;
     return this;
   }
 
+  // draw boundary rectangle
   method void draw() {
     do Screen.setColor(true);
-    do Screen.drawRectangle(startX, startY, endX, endY);
+    do Screen.drawRectangle(leftX, topY, rightX, bottomY);
     return;
   }
 
-  method boolean isOverlap(int x1, int y1, int x2, int y2) {
+  // check if object is overlapping boundary given its coordinates
+  method boolean checkOverlapping(int x1, int y1, int x2, int y2) {
     return (
-      (x1 < (endX+1)) & (x2 > (startX-1))
+      // left of object overlaps right of boundary
+      // right of object overlaps left of boundary
+      (x1 < (rightX + 1)) & (x2 > (leftX - 1))
     ) & (
-      (y1 < (endY+1)) & (y2 > (startY-1))
+      // top of object overlaps bottom of boundary
+      // bottom of object overlaps top of boundary
+      (y1 < (bottomY + 1)) & (y2 > (topY - 1))
     );
   }
 
+  // dispose boundary
   method void dispose() {
     do Memory.deAlloc(this);
     return;
