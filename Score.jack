@@ -19,9 +19,9 @@ class Score {
     let nextScore = pellets.getNCaptured() * 10;
     if (~(nextScore = score)) {
       let score = nextScore;
-	  if(score > high){
-		let high = score;
-	  }
+	    if (score > high) {
+		    let high = score;
+	    }
       do draw();
     }
     return;
@@ -30,7 +30,7 @@ class Score {
   method void draw() {
     do Output.moveCursor(3, 46); // row, col
     do Output.printInt(score);
-	do Output.moveCursor(7, 46); // row, col
+	  do Output.moveCursor(7, 46); // row, col
     do Output.printInt(high);
     return;
   }

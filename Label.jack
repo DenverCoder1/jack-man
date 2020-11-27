@@ -22,7 +22,7 @@ class Label {
   }
 
   method void dispose() {
-	do text.dispose();
+	  do text.dispose();
     do Memory.deAlloc(this);
     return;
   }

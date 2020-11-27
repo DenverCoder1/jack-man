@@ -88,20 +88,20 @@ class PacMan {
     // shift left 17 times
     let memAddress = 16384 + xOffset + yOffset;
     if (frame = -1) {
-        do Memory.poke(memAddress+32, 16770);
-        do Memory.poke(memAddress+64, 8196);
-        do Memory.poke(memAddress+96, 4104);
-        do Memory.poke(memAddress+128, 2064);
-        do Memory.poke(memAddress+160, 1056);
-        do Memory.poke(memAddress+192, 576);
-        do Memory.poke(memAddress+224, 16770);
-        do Memory.poke(memAddress+256, 16770);
-        do Memory.poke(memAddress+288, 576);
-        do Memory.poke(memAddress+320, 1056);
-        do Memory.poke(memAddress+352, 2064);
-        do Memory.poke(memAddress+384, 4104);
-        do Memory.poke(memAddress+416, 8196);
-        do Memory.poke(memAddress+448, 16770);
+      do Memory.poke(memAddress+32, 16770);
+      do Memory.poke(memAddress+64, 8196);
+      do Memory.poke(memAddress+96, 4104);
+      do Memory.poke(memAddress+128, 2064);
+      do Memory.poke(memAddress+160, 1056);
+      do Memory.poke(memAddress+192, 576);
+      do Memory.poke(memAddress+224, 16770);
+      do Memory.poke(memAddress+256, 16770);
+      do Memory.poke(memAddress+288, 576);
+      do Memory.poke(memAddress+320, 1056);
+      do Memory.poke(memAddress+352, 2064);
+      do Memory.poke(memAddress+384, 4104);
+      do Memory.poke(memAddress+416, 8196);
+      do Memory.poke(memAddress+448, 16770);
     }
     /* closed mouth */
     if (frame = 0) {

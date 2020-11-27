@@ -18,7 +18,7 @@ class Random {
 
         while(~key) {
             let seed = seed + 1;
-            if( seed = 32767 ) {
+            if (seed = 32767) {
                 let seed = 0;
             }
             let key = Keyboard.keyPressed();

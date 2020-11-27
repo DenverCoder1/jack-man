@@ -26,6 +26,9 @@ push local 0
 call Game.handleKey 2
 pop temp 0
 label IF_FALSE0
+push constant 20
+call Sys.wait 1
+pop temp 0
 goto WHILE_EXP0
 label WHILE_END0
 push constant 0

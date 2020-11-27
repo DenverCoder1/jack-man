@@ -339,7 +339,7 @@ class Walls {
       do b.dispose();
       let i = i + 1;
     }
-	do boundaries.dispose();
+	  do boundaries.dispose();
     do Memory.deAlloc(this);
     return;
   }

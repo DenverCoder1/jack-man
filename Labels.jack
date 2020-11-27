@@ -29,15 +29,15 @@ class Labels {
   }
 
   method void dispose() {
-	var Label b;
-	var int i;
+	  var Label b;
+	  var int i;
     let i = 0;
     while (i < 3) {
       let b = labels[i];
       do b.dispose();
       let i = i + 1;
     }
-	do labels.dispose();
+	  do labels.dispose();
     do Memory.deAlloc(this);
     return;
   }

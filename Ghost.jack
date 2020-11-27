@@ -96,28 +96,27 @@ class Ghost {
   }
   
   method void setNextDir2() {
-	var int i;
-	let i = Random.randRange(150);
+	  var int i;
+	  let i = Random.randRange(150);
     if(i < 25 ){
 		let dir = 1;
-        return;
-	}
-	if(i < 50 ){
-		let dir = 2;
-        return;
-	}
-	if(i < 75 ){
-		let dir = 3;
-        return;
-	}
-	if(i < 100 ){
-		let dir = 4;
-        return;
-	}
-	do setNextDir();
+    return;
+	  }
+	  if(i < 50 ){
+		  let dir = 2;
+      return;
+	  }
+	  if(i < 75 ){
+		  let dir = 3;
+      return;
+	  }
+	  if(i < 100 ){
+		  let dir = 4;
+      return;
+	  }
+	  do setNextDir();
     return;
   }
-  
   
   method int getNextX() {
     var int nextX;
@@ -140,7 +139,7 @@ class Ghost {
     if (dir = 1) {
       let nextY = y - speed;
     }
-	if (nextY > 220) {
+	  if (nextY > 220) {
       let nextY = 12;
       do Screen.setColor(false);
       do Screen.drawRectangle(x, y, endX(), endY());

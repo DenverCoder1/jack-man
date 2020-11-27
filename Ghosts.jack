@@ -48,15 +48,15 @@ class Ghosts {
   }
 
   method void dispose() {
-	var Ghost b;
-	var int i;
+	  var Ghost b;
+	  var int i;
     let i = 0;
     while (i < 4) {
       let b = ghosts[i];
       do b.dispose();
       let i = i + 1;
     }
-	do ghosts.dispose();
+	  do ghosts.dispose();
     do Memory.deAlloc(this);
     return;
   }

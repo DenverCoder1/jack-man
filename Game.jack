@@ -7,8 +7,7 @@ class Game {
   field Labels labels;
 
   constructor Game new() {
-	  do Random.setSeed(Random.randomSeed()); 
-  
+	  do Random.setSeed(Random.randomSeed());
     let walls = Walls.new();
     let pellets = Pellets.new();
     let pacman = PacMan.new(pellets, walls);
@@ -29,7 +28,7 @@ class Game {
   }
 
   method void next() {
-	var int key;
+	  var int key;
     if (isGameOver()) {
       do Output.moveCursor(10, 46); // row, col
       do Output.printString("GAME OVER");
@@ -37,18 +36,16 @@ class Game {
       do Output.printString("INSERT COIN");
       do Output.moveCursor(14, 46); // row, col
       do Output.printString("- PRESS F2");
-	  
-	  while (true) {
-		
-		let key = Keyboard.keyPressed();
-		if (key = 142) {
-			do newGame();
-			return;
-			
-		}
-	  }
-	        
+
+	    while (true) {
+		    let key = Keyboard.keyPressed();
+		    if (key = 142) {
+			    do newGame();
+			    return;			
+		    }
+	    }    
     }
+
     do pacman.next();
     do ghosts.next();
     do score.next();
@@ -100,12 +97,12 @@ class Game {
   }
 
   method void dispose() {
-	do walls.dispose();
-	do pellets.dispose();
-	do pacman.dispose();
-	do score.dispose();
-	do ghosts.dispose();
-	do labels.dispose();
+	  do walls.dispose();
+	  do pellets.dispose();
+	  do pacman.dispose();
+	  do score.dispose();
+	  do ghosts.dispose();
+	  do labels.dispose();
     do Memory.deAlloc(this);
     return;
   }
