@@ -1,11 +1,18 @@
 class Game {
+  // current score
   field Score score;
+  // the pacman instance
   field PacMan pacman;
+  // grid of pellets
   field Pellets pellets;
+  // collection of boundaries
   field Walls walls;
+  // collection of ghosts
   field Ghosts ghosts;
+  // labels on the side excluding score, highscore
   field Labels labels;
 
+  // create a new game
   constructor Game new() {
 	  do Random.setSeed(Random.randomSeed());
     let walls = Walls.new();
