@@ -2,9 +2,6 @@ function Game.new 0
 push constant 6
 call Memory.alloc 1
 pop pointer 0
-call Random.randomSeed 0
-call Random.setSeed 1
-pop temp 0
 call Walls.new 0
 pop this 3
 call Pellets.new 0
@@ -179,25 +176,17 @@ pop pointer 0
 push this 1
 call PacMan.getIsCaptured 1
 return
-function Game.reset 0
-push argument 0
-pop pointer 0
-push this 1
-call PacMan.reset 1
-pop temp 0
-push constant 0
-return
 function Game.handleKey 0
 push argument 0
 pop pointer 0
 push argument 1
-push constant 81
+push constant 142
 eq
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
 push pointer 0
-call Game.reset 1
+call Game.newGame 1
 pop temp 0
 push constant 0
 return
@@ -211,65 +200,19 @@ return
 function Game.newGame 0
 push argument 0
 pop pointer 0
-push this 2
-call Pellets.dispose 1
-pop temp 0
-push this 1
-call PacMan.dispose 1
-pop temp 0
-push this 0
-call Score.dispose 1
-pop temp 0
-push this 4
-call Ghosts.dispose 1
-pop temp 0
-push this 5
-call Labels.dispose 1
-pop temp 0
-push this 3
-call Walls.dispose 1
+push pointer 0
+call Game.disposeSprites 1
 pop temp 0
 call Screen.clearScreen 0
 pop temp 0
-call Walls.new 0
-pop this 3
-call Pellets.new 0
-pop this 2
-push this 2
-push this 3
-call PacMan.new 2
-pop this 1
-push this 2
-call Score.new 1
-pop this 0
-push this 1
-push this 3
-push this 2
-call Ghosts.new 3
-pop this 4
-call Labels.new 0
-pop this 5
-push this 1
-call PacMan.init 1
+call Game.new 0
 pop temp 0
-push this 3
-call Walls.init 1
-pop temp 0
-push this 2
-call Pellets.init 1
-pop temp 0
-push this 0
-call Score.init 1
-pop temp 0
-push this 4
-call Ghosts.init 1
-pop temp 0
-push this 5
-call Labels.init 1
+push pointer 0
+call Game.init 1
 pop temp 0
 push constant 0
 return
-function Game.dispose 0
+function Game.disposeSprites 0
 push argument 0
 pop pointer 0
 push this 3
@@ -289,6 +232,14 @@ call Ghosts.dispose 1
 pop temp 0
 push this 5
 call Labels.dispose 1
+pop temp 0
+push constant 0
+return
+function Game.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Game.disposeSprites 1
 pop temp 0
 push pointer 0
 call Memory.deAlloc 1

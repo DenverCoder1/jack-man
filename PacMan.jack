@@ -347,13 +347,6 @@ class PacMan {
     return nextY;
   }
 
-  method void reset() {
-    let x = 248;
-    let y = 120;
-    let dir = 4;
-    return;
-  }
-
   method void handleKey(int key) {
     if (key = 130) {
       do setDir(3); // left

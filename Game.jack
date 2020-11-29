@@ -14,7 +14,7 @@ class Game {
 
   // create a new game
   constructor Game new() {
-	  do Random.setSeed(Random.randomSeed());
+    // initialize sprites
     let walls = Walls.new();
     let pellets = Pellets.new();
     let pacman = PacMan.new(pellets, walls);
@@ -24,6 +24,7 @@ class Game {
     return this;
   }
 
+  // call initialization functions
   method void init() {
     do pacman.init();
     do walls.init();
@@ -34,8 +35,11 @@ class Game {
     return;
   }
 
+  // repeated game logic
   method void next() {
-	  var int key;
+    var int key;
+
+    // if the game is over, write message and wait for F2
     if (isGameOver()) {
       do Output.moveCursor(10, 46); // row, col
       do Output.printString("GAME OVER");
@@ -43,73 +47,67 @@ class Game {
       do Output.printString("INSERT COIN");
       do Output.moveCursor(14, 46); // row, col
       do Output.printString("- PRESS F2");
-
+      // wait for F2 to be pressed
 	    while (true) {
 		    let key = Keyboard.keyPressed();
 		    if (key = 142) {
+          // create a new game
 			    do newGame();
-			    return;			
+			    return;
 		    }
-	    }    
+	    }
     }
 
+    // refresh state of game objects
     do pacman.next();
     do ghosts.next();
     do score.next();
     return;
   }
 
+  // check if pacman was captured
   method boolean isGameOver() {
     return pacman.getIsCaptured();
   }
 
-  method void reset() {
-    do pacman.reset();
-    return;
-  }
-
   method void handleKey(int key) {
-    if (key = 81) {
-      do reset();
+    // reset if F2 pressed
+    if (key = 142) {
+      // create a new game
+      do newGame();
       return;
     }
+    // handle as pacman movement
     do pacman.handleKey(key);
     return;
   }
 
 	method void newGame() {
-    do pellets.dispose();
-    do pacman.dispose();
-    do score.dispose();
-    do ghosts.dispose();
-    do labels.dispose();
-    do walls.dispose();
+    // destroy sprites
+    do disposeSprites();
+    // clear screen
     do Screen.clearScreen();
-    
-    let walls = Walls.new();
-    let pellets = Pellets.new();
-    let pacman = PacMan.new(pellets, walls);
-    let score = Score.new(pellets);
-    let ghosts = Ghosts.new(pacman, walls, pellets);
-    let labels = Labels.new();
-	
-    do pacman.init();
-    do walls.init();
-    do pellets.init();
-    do score.init();
-    do ghosts.init();
-    do labels.init();
-	
+    // recreate sprites
+    do Game.new();
+    // call initialization functions
+    do init();
     return;
   }
 
-  method void dispose() {
-	  do walls.dispose();
+  // destroy all sprites
+  method void disposeSprites() {
+    do walls.dispose();
 	  do pellets.dispose();
 	  do pacman.dispose();
 	  do score.dispose();
 	  do ghosts.dispose();
-	  do labels.dispose();
+    do labels.dispose();
+    return;
+  }
+
+  // dispose all
+  method void dispose() {
+    do disposeSprites();
     do Memory.deAlloc(this);
     return;
   }

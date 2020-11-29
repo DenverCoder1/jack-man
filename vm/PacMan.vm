@@ -1398,17 +1398,6 @@ pop temp 0
 label IF_FALSE3
 push local 0
 return
-function PacMan.reset 0
-push argument 0
-pop pointer 0
-push constant 248
-pop this 0
-push constant 120
-pop this 1
-push constant 4
-pop this 3
-push constant 0
-return
 function PacMan.handleKey 0
 push argument 0
 pop pointer 0

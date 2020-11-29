@@ -2,15 +2,21 @@ class Main {
   function void main() {
     var int key;
     var Game game;
+    // set seed for random number generator
+    do Random.setSeed(Random.randomSeed());
+    // create game and initialize objects
     let game = Game.new();
     do game.init();
+    // game loop
     while (true) {
       do game.next();
+      // check for keyboard input
       let key = Keyboard.keyPressed();
-      // only enter if key pressed
+      // if a key is pressed, handle key
       if (~(key = 0)) {
         do game.handleKey(key);
       }
+      // wait
       do Sys.wait(20);
     }
     return;
