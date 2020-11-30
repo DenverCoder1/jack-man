@@ -8,7 +8,7 @@ class PacMan {
   field boolean isCaptured;
   field int frame;
 
-  constructor PacMan new(Pellets p, Walls w) {
+  constructor PacMan new(Pellets d, Walls w) {
     /* Pacman Config */
     let speed = 3;
     let x = 165; // Start x
@@ -19,7 +19,7 @@ class PacMan {
     let frame = -1;
 
     let walls = w;
-    let pellets = p;
+    let pellets = d;
 
     return this;
   }

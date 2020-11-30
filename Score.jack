@@ -3,9 +3,9 @@ class Score {
   field int high;
   field Pellets pellets;
 
-  constructor Score new(Pellets p) {
+  constructor Score new(Pellets d) {
     let score = 0;
-    let pellets = p;
+    let pellets = d;
     return this;
   }
 

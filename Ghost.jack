@@ -7,7 +7,7 @@ class Ghost {
   field PacMan pacman;
   field Pellets pellets;
 
-  constructor Ghost new(int xi, int yi, PacMan p, Walls w, Pellets p) {
+  constructor Ghost new(int xi, int yi, PacMan p, Walls w, Pellets d) {
     /* Ghost Config */
     let size = 12;
     let speed = 3;
@@ -17,7 +17,7 @@ class Ghost {
 
     let pacman = p;
     let walls = w;
-    let pellets = p;
+    let pellets = d;
 
     return this;
   }
@@ -48,7 +48,6 @@ class Ghost {
     return;
   }
 
-  
   method boolean advance() {
     var int nextX, nextY;
     let nextX = getNextX();
