@@ -15,12 +15,7 @@ class Game {
   // create a new game
   constructor Game new() {
     // initialize sprites
-    let walls = Walls.new();
-    let pellets = Pellets.new();
-    let pacman = PacMan.new(pellets, walls);
-    let score = Score.new(pellets);
-    let ghosts = Ghosts.new(pacman, walls, pellets);
-    let labels = Labels.new();
+    do createSprites();
     return this;
   }
 
@@ -83,9 +78,19 @@ class Game {
     // clear screen
     do Screen.clearScreen();
     // recreate sprites
-    do Game.new();
+    do createSprites();
     // call initialization functions
     do init();
+    return;
+  }
+
+  method void createSprites() {
+    let walls = Walls.new();
+    let pellets = Pellets.new();
+    let pacman = PacMan.new(pellets, walls);
+    let score = Score.new(pellets);
+    let ghosts = Ghosts.new(pacman, walls, pellets);
+    let labels = Labels.new();
     return;
   }
 
