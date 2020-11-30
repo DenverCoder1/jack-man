@@ -40,7 +40,7 @@ class Game {
     var int key;
 
     // if the game is over, write message and wait for F2
-    if (isGameOver()) {
+    if (pacman.getIsCaptured()) {
       do Output.moveCursor(10, 46); // row, col
       do Output.printString("GAME OVER");
       do Output.moveCursor(13, 46); // row, col
@@ -63,11 +63,6 @@ class Game {
     do ghosts.next();
     do score.next();
     return;
-  }
-
-  // check if pacman was captured
-  method boolean isGameOver() {
-    return pacman.getIsCaptured();
   }
 
   method void handleKey(int key) {

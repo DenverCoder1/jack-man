@@ -61,6 +61,16 @@ call Ghost.draw 1
 pop temp 0
 label IF_FALSE0
 push this 6
+call PacMan.getX 1
+call Output.printInt 1
+pop temp 0
+push constant 1
+call String.new 1
+push constant 47
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push this 6
 push this 0
 push this 1
 push pointer 0
