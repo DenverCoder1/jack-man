@@ -2,6 +2,8 @@ class Main {
   function void main() {
     var int key;
     var Game game;
+    // display splash screen
+    do Splash.show();
     // set seed for random number generator
     do Random.setSeed(Random.randomSeed());
     // create game and initialize objects

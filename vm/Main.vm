@@ -1,4 +1,6 @@
 function Main.main 2
+call Splash.show 0
+pop temp 0
 call Random.randomSeed 0
 call Random.setSeed 1
 pop temp 0

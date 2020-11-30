@@ -3,8 +3,6 @@ push constant 0
 pop local 0
 push constant 0
 pop local 1
-call Splash.show 0
-pop temp 0
 label WHILE_EXP0
 push local 1
 not

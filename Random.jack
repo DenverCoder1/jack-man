@@ -13,9 +13,6 @@ class Random {
         let seed = 0;
         let key = 0;
 
-        // display splash screen
-        do Splash.show();
-
         while(~key) {
             let seed = seed + 1;
             if (seed = 32767) {
