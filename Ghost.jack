@@ -8,12 +8,11 @@ class Ghost {
   field Pellets pellets;
 
   constructor Ghost new(int xi, int yi, PacMan p, Walls w, Pellets d) {
-    /* Ghost Config */
     let size = 12;
     let speed = 3;
     let x = xi; // start x
     let y = yi; // start y
-    let dir = 3; // Start direction right
+    let dir = 3; // start going left
 
     let pacman = p;
     let walls = w;

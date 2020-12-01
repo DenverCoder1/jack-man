@@ -9,12 +9,11 @@ class PacMan {
   field int frame;
 
   constructor PacMan new(Pellets d, Walls w) {
-    /* Pacman Config */
     let speed = 3;
-    let x = 165; // Start x
-    let y = 155; // Start y
+    let x = 165; // start x
+    let y = 155; // start y
     let size = 12;
-    let dir = 1; // Start direction up
+    let dir = 1; // start going up
     let isCaptured = false;
     let frame = -1;
 
