@@ -1,5 +1,7 @@
 class Walls {
+  // number of boundaries
   field int nBoundaries;
+  // collection of boundaries
   field Array boundaries;
 
   constructor Walls new() {
@@ -304,6 +306,7 @@ class Walls {
     return;
   }
 
+  // draw all boundaries
   method void draw() {
     var Boundary b;
     var int i;
@@ -316,6 +319,7 @@ class Walls {
     return;
   }
 
+  // check if object given corners is overlapping a boundary
   method boolean checkOverlapping(int x1, int y1, int x2, int y2) {
     var Boundary b;
     var int i;

@@ -84,6 +84,7 @@ class Game {
     return;
   }
 
+  // create all sprites
   method void createSprites() {
     let walls = Walls.new();
     let pellets = Pellets.new();

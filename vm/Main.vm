@@ -1,8 +1,9 @@
 function Main.main 2
 call Splash.show 0
 pop temp 0
-call Random.randomSeed 0
-call Random.setSeed 1
+call Random.seed 0
+pop temp 0
+call Screen.clearScreen 0
 pop temp 0
 call Game.new 0
 pop local 1
@@ -31,7 +32,7 @@ push local 0
 call Game.handleKey 2
 pop temp 0
 label IF_FALSE0
-push constant 20
+push constant 25
 call Sys.wait 1
 pop temp 0
 goto WHILE_EXP0

@@ -1,10 +1,15 @@
 class Pellets {
-  field Array pellets;
+  // number of pellets
   field int nPellets;
+  // collection of pellets
+  field Array pellets;
+  // grid of dots dimensions
   field int cols;
   field int rows;
+  // space between dots
   field int spaceSize;
-  field int nCaptured;
+  // number of captured dots
+  field int capturedCount;
 
   constructor Pellets new() {
     let cols = 17;
@@ -50,8 +55,8 @@ class Pellets {
     return;
   }
 
-  method int getNCaptured() {
-    return nCaptured;
+  method int getCapturedCount() {
+    return capturedCount;
   }
 
   method void setCollected(int x1, int y1, int x2, int y2, boolean collecting) {
@@ -64,7 +69,7 @@ class Pellets {
         if (~(cur.isCollected())) {
           if (collecting) {
             do cur.setCollected();
-            let nCaptured = nCaptured + 1;
+            let capturedCount = capturedCount + 1;
           }
           do cur.draw();
         }
@@ -84,7 +89,6 @@ class Pellets {
       do b.dispose();
       let i = i + 1;
     }
-    let nCaptured = 0;
     do pellets.dispose();
     do Memory.deAlloc(this);
     return;

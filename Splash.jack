@@ -1,4 +1,5 @@
 class Splash {
+  // show splash
   function void show() {
     // print JACK-MAN large letters
     do Screen.setColor(true);

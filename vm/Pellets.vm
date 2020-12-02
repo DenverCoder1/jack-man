@@ -11,10 +11,10 @@ pop this 4
 push this 2
 push this 3
 call Math.multiply 2
-pop this 1
-push this 1
-call Array.new 1
 pop this 0
+push this 0
+call Array.new 1
+pop this 1
 push pointer 0
 call Pellets.createPellets 1
 pop temp 0
@@ -35,7 +35,7 @@ push constant 0
 pop local 2
 label WHILE_EXP0
 push local 2
-push this 1
+push this 0
 lt
 not
 if-goto WHILE_END0
@@ -66,7 +66,7 @@ push constant 26
 add
 pop local 1
 push local 2
-push this 0
+push this 1
 add
 push local 0
 push local 1
@@ -90,12 +90,12 @@ push constant 0
 pop local 0
 label WHILE_EXP0
 push local 0
-push this 1
+push this 0
 lt
 not
 if-goto WHILE_END0
 push local 0
-push this 0
+push this 1
 add
 pop pointer 1
 push that 0
@@ -111,7 +111,7 @@ goto WHILE_EXP0
 label WHILE_END0
 push constant 0
 return
-function Pellets.getNCaptured 0
+function Pellets.getCapturedCount 0
 push argument 0
 pop pointer 0
 push this 5
@@ -123,12 +123,12 @@ push constant 0
 pop local 0
 label WHILE_EXP0
 push local 0
-push this 1
+push this 0
 lt
 not
 if-goto WHILE_END0
 push local 0
-push this 0
+push this 1
 add
 pop pointer 1
 push that 0
@@ -182,12 +182,12 @@ push constant 0
 pop local 1
 label WHILE_EXP0
 push local 1
-push this 1
+push this 0
 lt
 not
 if-goto WHILE_END0
 push local 1
-push this 0
+push this 1
 add
 pop pointer 1
 push that 0
@@ -201,9 +201,7 @@ add
 pop local 1
 goto WHILE_EXP0
 label WHILE_END0
-push constant 0
-pop this 5
-push this 0
+push this 1
 call Array.dispose 1
 pop temp 0
 push pointer 0

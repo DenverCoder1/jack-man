@@ -1,23 +1,28 @@
 class Ghost {
+  // current position
   field int x, y;
+  // size
   field int size;
-  field int dir; /* 1=up, 2=down, 3=left, 4=right */
+  // direction 1=up, 2=down, 3=left, 4=right
+  field int dir;
+  // number of pixels to move at a time
   field int speed;
+  // reference to walls collection
   field Walls walls;
+  // reference to pac-man
   field PacMan pacman;
+  // reference to pellets collection
   field Pellets pellets;
 
-  constructor Ghost new(int xi, int yi, PacMan p, Walls w, Pellets d) {
+  constructor Ghost new(int xi, int yi, PacMan pm, Walls w, Pellets p) {
     let size = 12;
     let speed = 3;
-    let x = xi; // start x
-    let y = yi; // start y
+    let x = xi; // starting x
+    let y = yi; // starting y
     let dir = 3; // start going left
-
-    let pacman = p;
+    let pacman = pm;
     let walls = w;
-    let pellets = d;
-
+    let pellets = p;
     return this;
   }
 

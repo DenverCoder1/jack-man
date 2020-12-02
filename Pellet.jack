@@ -6,35 +6,30 @@ class Pellet {
   // size of pellet
   field int size;
 
-  constructor Pellet new(int ix, int iy) {
-    let x = ix;
-    let y = iy;
+  constructor Pellet new(int xi, int yi) {
+    let x = xi;
+    let y = yi;
     let size = 2;
     let collected = false;
     return this;
   }
 
+  // draw dot - black if not collected
   method void draw() {
     do Screen.setColor(~collected);
     do Screen.drawRectangle(x, y, x+size-1, y+size-1);
     return;
   }
 
+  // set as collected
   method void setCollected() {
     let collected = true;
     return;
   }
 
+  // get collected status
   method boolean isCollected() {
     return collected;
-  }
-
-  method int getX() {
-    return x;
-  }
-
-  method int getY() {
-    return y;
   }
 
   method boolean checkOverlapping(int x1, int y1, int x2, int y2) {

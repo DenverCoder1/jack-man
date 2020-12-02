@@ -134,7 +134,7 @@ push constant 0
 pop local 1
 label WHILE_EXP0
 push local 1
-push constant 3
+push this 0
 lt
 not
 if-goto WHILE_END0

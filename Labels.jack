@@ -1,5 +1,7 @@
 class Labels {
+  // number of labels
   field int nLabels;
+  // collection of labels
   field Array labels;
 
   constructor Labels new() {
@@ -10,6 +12,7 @@ class Labels {
   }
 
   method void createLabels() {
+    // create labels
     let labels[0] = Label.new("SCORE", 2, 46);
     let labels[1] = Label.new("HIGH SCORE", 6, 46);
     let labels[2] = Label.new("JACK-MAN", 20, 46); 
@@ -17,6 +20,7 @@ class Labels {
   }
 
   method void init() {
+    // draw labels
     var int i;
     var Label cur;
     let i = 0;
@@ -32,7 +36,7 @@ class Labels {
 	  var Label b;
 	  var int i;
     let i = 0;
-    while (i < 3) {
+    while (i < nLabels) {
       let b = labels[i];
       do b.dispose();
       let i = i + 1;

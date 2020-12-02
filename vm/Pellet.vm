@@ -48,16 +48,6 @@ push argument 0
 pop pointer 0
 push this 2
 return
-function Pellet.getX 0
-push argument 0
-pop pointer 0
-push this 0
-return
-function Pellet.getY 0
-push argument 0
-pop pointer 0
-push this 1
-return
 function Pellet.checkOverlapping 0
 push argument 0
 pop pointer 0

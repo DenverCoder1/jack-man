@@ -1,5 +1,7 @@
 class Label {
+  // text of label
   field String text;
+  // cursor offset
   field int row;
   field int col;
 
