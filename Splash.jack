@@ -337,7 +337,7 @@ class Splash {
     do Screen.drawRectangle(468, 117, 477, 126);
     do Screen.drawRectangle(477, 117, 486, 126);
 
-    // press any key
+    // print text below title
     do Output.moveCursor(14, 13); // row, column
     do Output.printString("JONAH LAWRENCE AND DANIEL KLEIN, 2020");
     do Output.moveCursor(18, 20); // row, column

@@ -1,2 +1,5 @@
 # jack-man
- PAC-MAN clone written in Jack
+
+PAC-MAN clone written in Jack
+
+Jonah Lawrence and Daniel Klein, 2020
