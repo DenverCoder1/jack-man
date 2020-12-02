@@ -26,7 +26,6 @@ class Ghost {
     return this;
   }
 
-  /* Getters */
   method int endX() {
     return x + size - 1;
   }
@@ -40,6 +39,7 @@ class Ghost {
     return;
   }
 
+  // advance and draw ghost, check if capturing pacman
   method void next() {
     var boolean didMove;
     let didMove = advance();
@@ -52,12 +52,13 @@ class Ghost {
     return;
   }
 
+  // move ghost, turn if will hit wall
   method boolean advance() {
     var int nextX, nextY;
     let nextX = getNextX();
     let nextY = getNextY();
     if (willCollideWithWalls(nextX, nextY)) {
-      do setNextDir2();
+      do setNextDirRandom();
       return false;
     }
     if ((x = nextX) & (y = nextY)) {
@@ -68,6 +69,7 @@ class Ghost {
     return true;
   }
 
+  // check if it will collide with a wall
   method boolean willCollideWithWalls(int nextX, int nextY) {
     var int nextEndX, nextEndY;
     let nextEndX = nextX + size - 1;
@@ -75,7 +77,8 @@ class Ghost {
     return walls.checkOverlapping(nextX, nextY, nextEndX, nextEndY);
   }
 
-  method void setNextDir() {
+  // change direction
+  method void setNextDirAI() {
     var int pacmanX, pacmanY;
     var int diffX, diffY;
     let pacmanX = pacman.getX();
@@ -98,26 +101,26 @@ class Ghost {
     return;
   }
   
-  method void setNextDir2() {
+  method void setNextDirRandom() {
 	  var int i;
 	  let i = Random.randRange(150);
-    if(i < 25 ){
+    if (i < 25) {
 		let dir = 1;
     return;
 	  }
-	  if(i < 50 ){
+	  if (i < 50) {
 		  let dir = 2;
       return;
 	  }
-	  if(i < 75 ){
+	  if (i < 75) {
 		  let dir = 3;
       return;
 	  }
-	  if(i < 100 ){
+	  if (i < 100) {
 		  let dir = 4;
       return;
 	  }
-	  do setNextDir();
+	  do setNextDirAI();
     return;
   }
   

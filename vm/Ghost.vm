@@ -94,7 +94,7 @@ if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
 push pointer 0
-call Ghost.setNextDir2 1
+call Ghost.setNextDirRandom 1
 pop temp 0
 push constant 0
 return
@@ -141,7 +141,7 @@ push local 0
 push local 1
 call Walls.checkOverlapping 5
 return
-function Ghost.setNextDir 4
+function Ghost.setNextDirAI 4
 push argument 0
 pop pointer 0
 push this 6
@@ -208,7 +208,7 @@ push constant 2
 pop this 3
 push constant 0
 return
-function Ghost.setNextDir2 1
+function Ghost.setNextDirRandom 1
 push argument 0
 pop pointer 0
 push constant 150
@@ -259,7 +259,7 @@ push constant 0
 return
 label IF_FALSE3
 push pointer 0
-call Ghost.setNextDir 1
+call Ghost.setNextDirAI 1
 pop temp 0
 push constant 0
 return

@@ -17,6 +17,7 @@ class Pellets {
     let spaceSize = 175;
     let nPellets = cols * rows;
     let pellets = Array.new(nPellets);
+    let capturedCount = 0;
     do createPellets();
     return this;
   }
