@@ -222,12 +222,13 @@ not
 call Screen.setColor 1
 pop temp 0
 push this 0
+push constant 6
+add
 push this 1
-push pointer 0
-call PacMan.endX 1
-push pointer 0
-call PacMan.endY 1
-call Screen.drawRectangle 4
+push constant 6
+add
+push constant 5
+call Screen.drawCircle 3
 pop temp 0
 push constant 0
 return

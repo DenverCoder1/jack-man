@@ -98,7 +98,8 @@ class PacMan {
     }
     // new pacman
     do Screen.setColor(true);
-    do Screen.drawRectangle(x, y, endX(), endY());
+    // draw pacman circle
+    do Screen.drawCircle(x + 6, y + 6, 5);
     return;
   }
 
