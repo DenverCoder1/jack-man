@@ -2,12 +2,14 @@ class Random {
     // random seed
     static int seed;
 
+    // generate seed when key pressed
     function void seed() {
         var int key;
         let key = 0;
         // increment seed until key pressed
         while(~key) {
             let seed = seed + 1;
+            // loop around
             if (seed = 32767) {
                 let seed = 0;
             }

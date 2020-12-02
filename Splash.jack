@@ -344,4 +344,9 @@ class Splash {
     do Output.printString("PRESS ANY KEY TO START");
     return;
   }
+
+  method void dispose() {
+    do Memory.deAlloc(this);
+      return;
+  }
 }
