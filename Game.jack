@@ -5,7 +5,7 @@ class Game {
   field PacMan pacman;
   // grid of pellets
   field Pellets pellets;
-  // collection of boundaries
+  // collection of walls
   field Walls walls;
   // collection of ghosts
   field Ghosts ghosts;

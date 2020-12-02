@@ -1,9 +1,9 @@
-class Boundary {
-  // corners of boundary
+class Wall {
+  // corners of wall
   field int leftX, topY, rightX, bottomY;
 
-  // construct boundary
-  constructor Boundary new(int x1, int y1, int x2, int y2) {
+  // construct wall
+  constructor Wall new(int x1, int y1, int x2, int y2) {
     let leftX = x1;
     let topY = y1;
     let rightX = x2;
@@ -11,27 +11,27 @@ class Boundary {
     return this;
   }
 
-  // draw boundary rectangle
+  // draw wall rectangle
   method void draw() {
     do Screen.setColor(true);
     do Screen.drawRectangle(leftX, topY, rightX, bottomY);
     return;
   }
 
-  // check if object is overlapping boundary given its coordinates
+  // check if object is overlapping wall given its coordinates
   method boolean checkOverlapping(int x1, int y1, int x2, int y2) {
     return (
-      // left of object overlaps right of boundary
-      // right of object overlaps left of boundary
+      // left of object overlaps right of wall
+      // right of object overlaps left of wall
       (x1 < (rightX + 1)) & (x2 > (leftX - 1))
     ) & (
-      // top of object overlaps bottom of boundary
-      // bottom of object overlaps top of boundary
+      // top of object overlaps bottom of wall
+      // bottom of object overlaps top of wall
       (y1 < (bottomY + 1)) & (y2 > (topY - 1))
     );
   }
 
-  // dispose boundary
+  // dispose wall
   method void dispose() {
     do Memory.deAlloc(this);
     return;

@@ -5,7 +5,7 @@ pop pointer 0
 push constant 283
 pop this 0
 push pointer 0
-call Walls.createBoundaries 1
+call Walls.createWalls 1
 pop temp 0
 push pointer 0
 return
@@ -17,7 +17,7 @@ call Walls.draw 1
 pop temp 0
 push constant 0
 return
-function Walls.createBoundaries 2
+function Walls.createWalls 2
 push argument 0
 pop pointer 0
 push this 0
@@ -30,7 +30,7 @@ push constant 27
 push constant 9
 push constant 36
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -42,7 +42,7 @@ push constant 36
 push constant 9
 push constant 45
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -54,7 +54,7 @@ push constant 45
 push constant 9
 push constant 54
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -66,7 +66,7 @@ push constant 54
 push constant 9
 push constant 63
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -78,7 +78,7 @@ push constant 63
 push constant 9
 push constant 72
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -90,7 +90,7 @@ push constant 72
 push constant 9
 push constant 81
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -102,7 +102,7 @@ push constant 81
 push constant 9
 push constant 90
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -114,7 +114,7 @@ push constant 90
 push constant 9
 push constant 99
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -126,7 +126,7 @@ push constant 99
 push constant 9
 push constant 108
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -138,7 +138,7 @@ push constant 108
 push constant 9
 push constant 117
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -150,7 +150,7 @@ push constant 117
 push constant 9
 push constant 126
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -162,7 +162,7 @@ push constant 126
 push constant 9
 push constant 135
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -174,7 +174,7 @@ push constant 135
 push constant 9
 push constant 144
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -186,7 +186,7 @@ push constant 144
 push constant 9
 push constant 153
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -198,7 +198,7 @@ push constant 153
 push constant 9
 push constant 162
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -210,7 +210,7 @@ push constant 180
 push constant 9
 push constant 189
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -222,7 +222,7 @@ push constant 189
 push constant 9
 push constant 198
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -234,7 +234,7 @@ push constant 198
 push constant 9
 push constant 207
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -246,7 +246,7 @@ push constant 207
 push constant 9
 push constant 216
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -258,7 +258,7 @@ push constant 216
 push constant 9
 push constant 225
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -270,7 +270,7 @@ push constant 225
 push constant 9
 push constant 234
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -282,7 +282,7 @@ push constant 234
 push constant 9
 push constant 243
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -294,7 +294,7 @@ push constant 243
 push constant 9
 push constant 252
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -306,7 +306,7 @@ push constant 252
 push constant 9
 push constant 261
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -318,7 +318,7 @@ push constant 261
 push constant 9
 push constant 270
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -330,7 +330,7 @@ push constant 270
 push constant 9
 push constant 279
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -342,7 +342,7 @@ push constant 279
 push constant 9
 push constant 288
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -354,7 +354,7 @@ push constant 288
 push constant 9
 push constant 297
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -366,7 +366,7 @@ push constant 297
 push constant 9
 push constant 306
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -378,7 +378,7 @@ push constant 306
 push constant 9
 push constant 315
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -390,7 +390,7 @@ push constant 315
 push constant 9
 push constant 324
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -402,7 +402,7 @@ push constant 324
 push constant 9
 push constant 333
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -414,7 +414,7 @@ push constant 333
 push constant 9
 push constant 342
 push constant 18
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -426,7 +426,7 @@ push constant 27
 push constant 18
 push constant 36
 push constant 27
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -438,7 +438,7 @@ push constant 153
 push constant 18
 push constant 162
 push constant 27
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -450,7 +450,7 @@ push constant 180
 push constant 18
 push constant 189
 push constant 27
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -462,7 +462,7 @@ push constant 270
 push constant 18
 push constant 279
 push constant 27
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -474,7 +474,7 @@ push constant 279
 push constant 18
 push constant 288
 push constant 27
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -486,7 +486,7 @@ push constant 333
 push constant 18
 push constant 342
 push constant 27
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -498,7 +498,7 @@ push constant 27
 push constant 27
 push constant 36
 push constant 36
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -510,7 +510,7 @@ push constant 153
 push constant 27
 push constant 162
 push constant 36
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -522,7 +522,7 @@ push constant 180
 push constant 27
 push constant 189
 push constant 36
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -534,7 +534,7 @@ push constant 333
 push constant 27
 push constant 342
 push constant 36
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -546,7 +546,7 @@ push constant 27
 push constant 36
 push constant 36
 push constant 45
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -558,7 +558,7 @@ push constant 54
 push constant 36
 push constant 63
 push constant 45
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -570,7 +570,7 @@ push constant 63
 push constant 36
 push constant 72
 push constant 45
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -582,7 +582,7 @@ push constant 90
 push constant 36
 push constant 99
 push constant 45
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -594,7 +594,7 @@ push constant 99
 push constant 36
 push constant 108
 push constant 45
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -606,7 +606,7 @@ push constant 126
 push constant 36
 push constant 135
 push constant 45
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -618,7 +618,7 @@ push constant 153
 push constant 36
 push constant 162
 push constant 45
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -630,7 +630,7 @@ push constant 180
 push constant 36
 push constant 189
 push constant 45
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -642,7 +642,7 @@ push constant 207
 push constant 36
 push constant 216
 push constant 45
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -654,7 +654,7 @@ push constant 234
 push constant 36
 push constant 243
 push constant 45
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -666,7 +666,7 @@ push constant 306
 push constant 36
 push constant 315
 push constant 45
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -678,7 +678,7 @@ push constant 333
 push constant 36
 push constant 342
 push constant 45
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -690,7 +690,7 @@ push constant 27
 push constant 45
 push constant 36
 push constant 54
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -702,7 +702,7 @@ push constant 54
 push constant 45
 push constant 63
 push constant 54
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -714,7 +714,7 @@ push constant 63
 push constant 45
 push constant 72
 push constant 54
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -726,7 +726,7 @@ push constant 90
 push constant 45
 push constant 99
 push constant 54
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -738,7 +738,7 @@ push constant 99
 push constant 45
 push constant 108
 push constant 54
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -750,7 +750,7 @@ push constant 126
 push constant 45
 push constant 135
 push constant 54
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -762,7 +762,7 @@ push constant 153
 push constant 45
 push constant 162
 push constant 54
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -774,7 +774,7 @@ push constant 180
 push constant 45
 push constant 189
 push constant 54
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -786,7 +786,7 @@ push constant 207
 push constant 45
 push constant 216
 push constant 54
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -798,7 +798,7 @@ push constant 234
 push constant 45
 push constant 243
 push constant 54
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -810,7 +810,7 @@ push constant 243
 push constant 45
 push constant 252
 push constant 54
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -822,7 +822,7 @@ push constant 252
 push constant 45
 push constant 261
 push constant 54
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -834,7 +834,7 @@ push constant 261
 push constant 45
 push constant 270
 push constant 54
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -846,7 +846,7 @@ push constant 270
 push constant 45
 push constant 279
 push constant 54
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -858,7 +858,7 @@ push constant 279
 push constant 45
 push constant 288
 push constant 54
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -870,7 +870,7 @@ push constant 306
 push constant 45
 push constant 315
 push constant 54
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -882,7 +882,7 @@ push constant 333
 push constant 45
 push constant 342
 push constant 54
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -894,7 +894,7 @@ push constant 27
 push constant 54
 push constant 36
 push constant 63
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -906,7 +906,7 @@ push constant 306
 push constant 54
 push constant 315
 push constant 63
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -918,7 +918,7 @@ push constant 333
 push constant 54
 push constant 342
 push constant 63
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -930,7 +930,7 @@ push constant 27
 push constant 63
 push constant 36
 push constant 72
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -942,7 +942,7 @@ push constant 306
 push constant 63
 push constant 315
 push constant 72
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -954,7 +954,7 @@ push constant 333
 push constant 63
 push constant 342
 push constant 72
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -966,7 +966,7 @@ push constant 27
 push constant 72
 push constant 36
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -978,7 +978,7 @@ push constant 54
 push constant 72
 push constant 63
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -990,7 +990,7 @@ push constant 63
 push constant 72
 push constant 72
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1002,7 +1002,7 @@ push constant 90
 push constant 72
 push constant 99
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1014,7 +1014,7 @@ push constant 99
 push constant 72
 push constant 108
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1026,7 +1026,7 @@ push constant 108
 push constant 72
 push constant 117
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1038,7 +1038,7 @@ push constant 117
 push constant 72
 push constant 126
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1050,7 +1050,7 @@ push constant 126
 push constant 72
 push constant 135
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1062,7 +1062,7 @@ push constant 135
 push constant 72
 push constant 144
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1074,7 +1074,7 @@ push constant 144
 push constant 72
 push constant 153
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1086,7 +1086,7 @@ push constant 153
 push constant 72
 push constant 162
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1098,7 +1098,7 @@ push constant 180
 push constant 72
 push constant 189
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1110,7 +1110,7 @@ push constant 189
 push constant 72
 push constant 198
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1122,7 +1122,7 @@ push constant 198
 push constant 72
 push constant 207
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1134,7 +1134,7 @@ push constant 207
 push constant 72
 push constant 216
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1146,7 +1146,7 @@ push constant 216
 push constant 72
 push constant 225
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1158,7 +1158,7 @@ push constant 243
 push constant 72
 push constant 252
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1170,7 +1170,7 @@ push constant 270
 push constant 72
 push constant 279
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1182,7 +1182,7 @@ push constant 279
 push constant 72
 push constant 288
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1194,7 +1194,7 @@ push constant 288
 push constant 72
 push constant 297
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1206,7 +1206,7 @@ push constant 297
 push constant 72
 push constant 306
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1218,7 +1218,7 @@ push constant 306
 push constant 72
 push constant 315
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1230,7 +1230,7 @@ push constant 333
 push constant 72
 push constant 342
 push constant 81
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1242,7 +1242,7 @@ push constant 27
 push constant 81
 push constant 36
 push constant 90
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1254,7 +1254,7 @@ push constant 54
 push constant 81
 push constant 63
 push constant 90
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1266,7 +1266,7 @@ push constant 63
 push constant 81
 push constant 72
 push constant 90
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1278,7 +1278,7 @@ push constant 117
 push constant 81
 push constant 126
 push constant 90
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1290,7 +1290,7 @@ push constant 243
 push constant 81
 push constant 252
 push constant 90
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1302,7 +1302,7 @@ push constant 306
 push constant 81
 push constant 315
 push constant 90
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1314,7 +1314,7 @@ push constant 333
 push constant 81
 push constant 342
 push constant 90
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1326,7 +1326,7 @@ push constant 27
 push constant 90
 push constant 36
 push constant 99
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1338,7 +1338,7 @@ push constant 54
 push constant 90
 push constant 63
 push constant 99
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1350,7 +1350,7 @@ push constant 63
 push constant 90
 push constant 72
 push constant 99
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1362,7 +1362,7 @@ push constant 117
 push constant 90
 push constant 126
 push constant 99
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1374,7 +1374,7 @@ push constant 243
 push constant 90
 push constant 252
 push constant 99
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1386,7 +1386,7 @@ push constant 306
 push constant 90
 push constant 315
 push constant 99
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1398,7 +1398,7 @@ push constant 333
 push constant 90
 push constant 342
 push constant 99
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1410,7 +1410,7 @@ push constant 27
 push constant 99
 push constant 36
 push constant 108
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1422,7 +1422,7 @@ push constant 90
 push constant 99
 push constant 99
 push constant 108
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1434,7 +1434,7 @@ push constant 144
 push constant 99
 push constant 153
 push constant 108
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1446,7 +1446,7 @@ push constant 153
 push constant 99
 push constant 162
 push constant 108
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1458,7 +1458,7 @@ push constant 162
 push constant 99
 push constant 171
 push constant 108
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1470,7 +1470,7 @@ push constant 171
 push constant 99
 push constant 180
 push constant 108
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1482,7 +1482,7 @@ push constant 180
 push constant 99
 push constant 189
 push constant 108
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1494,7 +1494,7 @@ push constant 207
 push constant 99
 push constant 216
 push constant 108
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1506,7 +1506,7 @@ push constant 270
 push constant 99
 push constant 279
 push constant 108
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1518,7 +1518,7 @@ push constant 333
 push constant 99
 push constant 342
 push constant 108
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1530,7 +1530,7 @@ push constant 27
 push constant 108
 push constant 36
 push constant 117
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1542,7 +1542,7 @@ push constant 90
 push constant 108
 push constant 99
 push constant 117
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1554,7 +1554,7 @@ push constant 180
 push constant 108
 push constant 189
 push constant 117
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1566,7 +1566,7 @@ push constant 207
 push constant 108
 push constant 216
 push constant 117
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1578,7 +1578,7 @@ push constant 270
 push constant 108
 push constant 279
 push constant 117
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1590,7 +1590,7 @@ push constant 333
 push constant 108
 push constant 342
 push constant 117
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1602,7 +1602,7 @@ push constant 27
 push constant 117
 push constant 36
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1614,7 +1614,7 @@ push constant 36
 push constant 117
 push constant 45
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1626,7 +1626,7 @@ push constant 45
 push constant 117
 push constant 54
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1638,7 +1638,7 @@ push constant 54
 push constant 117
 push constant 63
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1650,7 +1650,7 @@ push constant 63
 push constant 117
 push constant 72
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1662,7 +1662,7 @@ push constant 90
 push constant 117
 push constant 99
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1674,7 +1674,7 @@ push constant 99
 push constant 117
 push constant 108
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1686,7 +1686,7 @@ push constant 108
 push constant 117
 push constant 117
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1698,7 +1698,7 @@ push constant 117
 push constant 117
 push constant 126
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1710,7 +1710,7 @@ push constant 180
 push constant 117
 push constant 189
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1722,7 +1722,7 @@ push constant 207
 push constant 117
 push constant 216
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1734,7 +1734,7 @@ push constant 216
 push constant 117
 push constant 225
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1746,7 +1746,7 @@ push constant 225
 push constant 117
 push constant 234
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1758,7 +1758,7 @@ push constant 234
 push constant 117
 push constant 243
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1770,7 +1770,7 @@ push constant 243
 push constant 117
 push constant 252
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1782,7 +1782,7 @@ push constant 270
 push constant 117
 push constant 279
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1794,7 +1794,7 @@ push constant 279
 push constant 117
 push constant 288
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1806,7 +1806,7 @@ push constant 288
 push constant 117
 push constant 297
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1818,7 +1818,7 @@ push constant 297
 push constant 117
 push constant 306
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1830,7 +1830,7 @@ push constant 306
 push constant 117
 push constant 315
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1842,7 +1842,7 @@ push constant 333
 push constant 117
 push constant 342
 push constant 126
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1854,7 +1854,7 @@ push constant 27
 push constant 126
 push constant 36
 push constant 135
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1866,7 +1866,7 @@ push constant 90
 push constant 126
 push constant 99
 push constant 135
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1878,7 +1878,7 @@ push constant 180
 push constant 126
 push constant 189
 push constant 135
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1890,7 +1890,7 @@ push constant 207
 push constant 126
 push constant 216
 push constant 135
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1902,7 +1902,7 @@ push constant 270
 push constant 126
 push constant 279
 push constant 135
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1914,7 +1914,7 @@ push constant 333
 push constant 126
 push constant 342
 push constant 135
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1926,7 +1926,7 @@ push constant 27
 push constant 135
 push constant 36
 push constant 144
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1938,7 +1938,7 @@ push constant 90
 push constant 135
 push constant 99
 push constant 144
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1950,7 +1950,7 @@ push constant 144
 push constant 135
 push constant 153
 push constant 144
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1962,7 +1962,7 @@ push constant 153
 push constant 135
 push constant 162
 push constant 144
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1974,7 +1974,7 @@ push constant 162
 push constant 135
 push constant 171
 push constant 144
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1986,7 +1986,7 @@ push constant 171
 push constant 135
 push constant 180
 push constant 144
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -1998,7 +1998,7 @@ push constant 180
 push constant 135
 push constant 189
 push constant 144
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2010,7 +2010,7 @@ push constant 207
 push constant 135
 push constant 216
 push constant 144
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2022,7 +2022,7 @@ push constant 270
 push constant 135
 push constant 279
 push constant 144
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2034,7 +2034,7 @@ push constant 333
 push constant 135
 push constant 342
 push constant 144
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2046,7 +2046,7 @@ push constant 27
 push constant 144
 push constant 36
 push constant 153
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2058,7 +2058,7 @@ push constant 54
 push constant 144
 push constant 63
 push constant 153
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2070,7 +2070,7 @@ push constant 63
 push constant 144
 push constant 72
 push constant 153
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2082,7 +2082,7 @@ push constant 117
 push constant 144
 push constant 126
 push constant 153
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2094,7 +2094,7 @@ push constant 243
 push constant 144
 push constant 252
 push constant 153
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2106,7 +2106,7 @@ push constant 306
 push constant 144
 push constant 315
 push constant 153
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2118,7 +2118,7 @@ push constant 333
 push constant 144
 push constant 342
 push constant 153
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2130,7 +2130,7 @@ push constant 27
 push constant 153
 push constant 36
 push constant 162
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2142,7 +2142,7 @@ push constant 54
 push constant 153
 push constant 63
 push constant 162
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2154,7 +2154,7 @@ push constant 63
 push constant 153
 push constant 72
 push constant 162
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2166,7 +2166,7 @@ push constant 117
 push constant 153
 push constant 126
 push constant 162
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2178,7 +2178,7 @@ push constant 243
 push constant 153
 push constant 252
 push constant 162
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2190,7 +2190,7 @@ push constant 306
 push constant 153
 push constant 315
 push constant 162
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2202,7 +2202,7 @@ push constant 333
 push constant 153
 push constant 342
 push constant 162
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2214,7 +2214,7 @@ push constant 27
 push constant 162
 push constant 36
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2226,7 +2226,7 @@ push constant 54
 push constant 162
 push constant 63
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2238,7 +2238,7 @@ push constant 63
 push constant 162
 push constant 72
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2250,7 +2250,7 @@ push constant 90
 push constant 162
 push constant 99
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2262,7 +2262,7 @@ push constant 99
 push constant 162
 push constant 108
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2274,7 +2274,7 @@ push constant 108
 push constant 162
 push constant 117
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2286,7 +2286,7 @@ push constant 117
 push constant 162
 push constant 126
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2298,7 +2298,7 @@ push constant 126
 push constant 162
 push constant 135
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2310,7 +2310,7 @@ push constant 135
 push constant 162
 push constant 144
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2322,7 +2322,7 @@ push constant 144
 push constant 162
 push constant 153
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2334,7 +2334,7 @@ push constant 153
 push constant 162
 push constant 162
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2346,7 +2346,7 @@ push constant 180
 push constant 162
 push constant 189
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2358,7 +2358,7 @@ push constant 189
 push constant 162
 push constant 198
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2370,7 +2370,7 @@ push constant 198
 push constant 162
 push constant 207
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2382,7 +2382,7 @@ push constant 207
 push constant 162
 push constant 216
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2394,7 +2394,7 @@ push constant 216
 push constant 162
 push constant 225
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2406,7 +2406,7 @@ push constant 243
 push constant 162
 push constant 252
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2418,7 +2418,7 @@ push constant 270
 push constant 162
 push constant 279
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2430,7 +2430,7 @@ push constant 279
 push constant 162
 push constant 288
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2442,7 +2442,7 @@ push constant 288
 push constant 162
 push constant 297
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2454,7 +2454,7 @@ push constant 297
 push constant 162
 push constant 306
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2466,7 +2466,7 @@ push constant 306
 push constant 162
 push constant 315
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2478,7 +2478,7 @@ push constant 333
 push constant 162
 push constant 342
 push constant 171
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2490,7 +2490,7 @@ push constant 27
 push constant 171
 push constant 36
 push constant 180
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2502,7 +2502,7 @@ push constant 306
 push constant 171
 push constant 315
 push constant 180
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2514,7 +2514,7 @@ push constant 333
 push constant 171
 push constant 342
 push constant 180
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2526,7 +2526,7 @@ push constant 27
 push constant 180
 push constant 36
 push constant 189
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2538,7 +2538,7 @@ push constant 306
 push constant 180
 push constant 315
 push constant 189
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2550,7 +2550,7 @@ push constant 333
 push constant 180
 push constant 342
 push constant 189
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2562,7 +2562,7 @@ push constant 27
 push constant 189
 push constant 36
 push constant 198
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2574,7 +2574,7 @@ push constant 54
 push constant 189
 push constant 63
 push constant 198
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2586,7 +2586,7 @@ push constant 63
 push constant 189
 push constant 72
 push constant 198
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2598,7 +2598,7 @@ push constant 90
 push constant 189
 push constant 99
 push constant 198
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2610,7 +2610,7 @@ push constant 99
 push constant 189
 push constant 108
 push constant 198
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2622,7 +2622,7 @@ push constant 126
 push constant 189
 push constant 135
 push constant 198
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2634,7 +2634,7 @@ push constant 153
 push constant 189
 push constant 162
 push constant 198
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2646,7 +2646,7 @@ push constant 180
 push constant 189
 push constant 189
 push constant 198
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2658,7 +2658,7 @@ push constant 207
 push constant 189
 push constant 216
 push constant 198
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2670,7 +2670,7 @@ push constant 234
 push constant 189
 push constant 243
 push constant 198
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2682,7 +2682,7 @@ push constant 243
 push constant 189
 push constant 252
 push constant 198
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2694,7 +2694,7 @@ push constant 252
 push constant 189
 push constant 261
 push constant 198
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2706,7 +2706,7 @@ push constant 261
 push constant 189
 push constant 270
 push constant 198
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2718,7 +2718,7 @@ push constant 270
 push constant 189
 push constant 279
 push constant 198
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2730,7 +2730,7 @@ push constant 279
 push constant 189
 push constant 288
 push constant 198
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2742,7 +2742,7 @@ push constant 306
 push constant 189
 push constant 315
 push constant 198
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2754,7 +2754,7 @@ push constant 333
 push constant 189
 push constant 342
 push constant 198
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2766,7 +2766,7 @@ push constant 27
 push constant 198
 push constant 36
 push constant 207
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2778,7 +2778,7 @@ push constant 54
 push constant 198
 push constant 63
 push constant 207
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2790,7 +2790,7 @@ push constant 63
 push constant 198
 push constant 72
 push constant 207
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2802,7 +2802,7 @@ push constant 90
 push constant 198
 push constant 99
 push constant 207
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2814,7 +2814,7 @@ push constant 99
 push constant 198
 push constant 108
 push constant 207
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2826,7 +2826,7 @@ push constant 126
 push constant 198
 push constant 135
 push constant 207
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2838,7 +2838,7 @@ push constant 153
 push constant 198
 push constant 162
 push constant 207
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2850,7 +2850,7 @@ push constant 180
 push constant 198
 push constant 189
 push constant 207
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2862,7 +2862,7 @@ push constant 207
 push constant 198
 push constant 216
 push constant 207
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2874,7 +2874,7 @@ push constant 234
 push constant 198
 push constant 243
 push constant 207
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2886,7 +2886,7 @@ push constant 306
 push constant 198
 push constant 315
 push constant 207
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2898,7 +2898,7 @@ push constant 333
 push constant 198
 push constant 342
 push constant 207
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2910,7 +2910,7 @@ push constant 27
 push constant 207
 push constant 36
 push constant 216
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2922,7 +2922,7 @@ push constant 153
 push constant 207
 push constant 162
 push constant 216
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2934,7 +2934,7 @@ push constant 180
 push constant 207
 push constant 189
 push constant 216
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2946,7 +2946,7 @@ push constant 333
 push constant 207
 push constant 342
 push constant 216
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2958,7 +2958,7 @@ push constant 27
 push constant 216
 push constant 36
 push constant 225
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2970,7 +2970,7 @@ push constant 153
 push constant 216
 push constant 162
 push constant 225
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2982,7 +2982,7 @@ push constant 180
 push constant 216
 push constant 189
 push constant 225
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -2994,7 +2994,7 @@ push constant 270
 push constant 216
 push constant 279
 push constant 225
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3006,7 +3006,7 @@ push constant 279
 push constant 216
 push constant 288
 push constant 225
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3018,7 +3018,7 @@ push constant 333
 push constant 216
 push constant 342
 push constant 225
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3030,7 +3030,7 @@ push constant 27
 push constant 225
 push constant 36
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3042,7 +3042,7 @@ push constant 36
 push constant 225
 push constant 45
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3054,7 +3054,7 @@ push constant 45
 push constant 225
 push constant 54
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3066,7 +3066,7 @@ push constant 54
 push constant 225
 push constant 63
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3078,7 +3078,7 @@ push constant 63
 push constant 225
 push constant 72
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3090,7 +3090,7 @@ push constant 72
 push constant 225
 push constant 81
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3102,7 +3102,7 @@ push constant 81
 push constant 225
 push constant 90
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3114,7 +3114,7 @@ push constant 90
 push constant 225
 push constant 99
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3126,7 +3126,7 @@ push constant 99
 push constant 225
 push constant 108
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3138,7 +3138,7 @@ push constant 108
 push constant 225
 push constant 117
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3150,7 +3150,7 @@ push constant 117
 push constant 225
 push constant 126
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3162,7 +3162,7 @@ push constant 126
 push constant 225
 push constant 135
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3174,7 +3174,7 @@ push constant 135
 push constant 225
 push constant 144
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3186,7 +3186,7 @@ push constant 144
 push constant 225
 push constant 153
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3198,7 +3198,7 @@ push constant 153
 push constant 225
 push constant 162
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3210,7 +3210,7 @@ push constant 180
 push constant 225
 push constant 189
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3222,7 +3222,7 @@ push constant 189
 push constant 225
 push constant 198
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3234,7 +3234,7 @@ push constant 198
 push constant 225
 push constant 207
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3246,7 +3246,7 @@ push constant 207
 push constant 225
 push constant 216
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3258,7 +3258,7 @@ push constant 216
 push constant 225
 push constant 225
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3270,7 +3270,7 @@ push constant 225
 push constant 225
 push constant 234
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3282,7 +3282,7 @@ push constant 234
 push constant 225
 push constant 243
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3294,7 +3294,7 @@ push constant 243
 push constant 225
 push constant 252
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3306,7 +3306,7 @@ push constant 252
 push constant 225
 push constant 261
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3318,7 +3318,7 @@ push constant 261
 push constant 225
 push constant 270
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3330,7 +3330,7 @@ push constant 270
 push constant 225
 push constant 279
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3342,7 +3342,7 @@ push constant 279
 push constant 225
 push constant 288
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3354,7 +3354,7 @@ push constant 288
 push constant 225
 push constant 297
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3366,7 +3366,7 @@ push constant 297
 push constant 225
 push constant 306
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3378,7 +3378,7 @@ push constant 306
 push constant 225
 push constant 315
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3390,7 +3390,7 @@ push constant 315
 push constant 225
 push constant 324
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3402,7 +3402,7 @@ push constant 324
 push constant 225
 push constant 333
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3414,7 +3414,7 @@ push constant 333
 push constant 225
 push constant 342
 push constant 234
-call Boundary.new 4
+call Wall.new 4
 pop temp 0
 pop pointer 1
 push temp 0
@@ -3439,7 +3439,7 @@ pop pointer 1
 push that 0
 pop local 0
 push local 0
-call Boundary.draw 1
+call Wall.draw 1
 pop temp 0
 push local 1
 push constant 1
@@ -3471,7 +3471,7 @@ push argument 1
 push argument 2
 push argument 3
 push argument 4
-call Boundary.checkOverlapping 5
+call Wall.checkOverlapping 5
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
@@ -3505,7 +3505,7 @@ pop pointer 1
 push that 0
 pop local 0
 push local 0
-call Boundary.dispose 1
+call Wall.dispose 1
 pop temp 0
 push local 1
 push constant 1

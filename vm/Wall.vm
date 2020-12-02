@@ -1,4 +1,4 @@
-function Boundary.new 0
+function Wall.new 0
 push constant 4
 call Memory.alloc 1
 pop pointer 0
@@ -12,7 +12,7 @@ push argument 3
 pop this 3
 push pointer 0
 return
-function Boundary.draw 0
+function Wall.draw 0
 push argument 0
 pop pointer 0
 push constant 0
@@ -27,7 +27,7 @@ call Screen.drawRectangle 4
 pop temp 0
 push constant 0
 return
-function Boundary.checkOverlapping 0
+function Wall.checkOverlapping 0
 push argument 0
 pop pointer 0
 push argument 1
@@ -54,7 +54,7 @@ gt
 and
 and
 return
-function Boundary.dispose 0
+function Wall.dispose 0
 push argument 0
 pop pointer 0
 push pointer 0
